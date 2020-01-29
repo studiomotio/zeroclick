@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/studiomotio/zeroclick#readme",
   "devDependencies": {
-    "webpack": "^4.41.5"
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }
