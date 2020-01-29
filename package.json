@@ -1,0 +1,30 @@
+{
+  "name": "@studiomotio/zeroclick",
+  "year": "2020",
+  "version": "0.1.0",
+  "description": "A web concept for a zero click user experience",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/studiomotio/zeroclick.git"
+  },
+  "keywords": [
+    "web",
+    "concept",
+    "experiment",
+    "user",
+    "experience",
+    "zeroclick"
+  ],
+  "author": {
+    "name": "Studio MOTIO",
+    "email": "hello@studiomotio.com",
+    "url": "https://www.studiomotio.com",
+    "github": "@studiomotio"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/studiomotio/zeroclick/issues"
+  },
+  "homepage": "https://github.com/studiomotio/zeroclick#readme"
+}
