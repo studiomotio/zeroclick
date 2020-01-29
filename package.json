@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/studiomotio/zeroclick/issues"
   },
-  "homepage": "https://github.com/studiomotio/zeroclick#readme"
+  "homepage": "https://github.com/studiomotio/zeroclick#readme",
+  "devDependencies": {
+    "webpack": "^4.41.5"
+  }
 }
