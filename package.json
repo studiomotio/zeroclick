@@ -3,7 +3,9 @@
   "year": "2020",
   "version": "0.1.0",
   "description": "A web concept for a zero click user experience",
-  "scripts": {},
+  "scripts": {
+    "build": "webpack --config webpack.config.js --progress"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/studiomotio/zeroclick.git"
