@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/studiomotio/zeroclick.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "web",
     "concept",
