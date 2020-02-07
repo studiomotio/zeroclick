@@ -3,6 +3,8 @@
   "year": "2020",
   "version": "0.1.0",
   "description": "A web concept for a zero click user experience",
+  "main": "dist/zeroclick.umd.js",
+  "unpkg": "dist/zeroclick.umd.js",
   "scripts": {
     "build": "webpack --config webpack.config.js --progress"
   },
