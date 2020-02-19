@@ -37,5 +37,14 @@ module.exports = {
         return `/*!\n  ${pack.name} – ${pack.description}\n  ${pack.author.name} ${pack.author.github} ${pack.year} ${pack.license}\n  ${pack.version}\n*/`;
       }
     })
-  ]
+  ],
+  devServer: {
+    contentBase: [
+      path.join(__dirname, '/docs'),
+      path.join(__dirname, '/src')
+    ],
+    watchContentBase: true,
+    compress: true,
+    port: 9000
+  }
 };
