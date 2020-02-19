@@ -6,7 +6,8 @@
   "main": "dist/zeroclick.umd.js",
   "unpkg": "dist/zeroclick.umd.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js --progress"
+    "build": "webpack --config webpack.config.js --progress",
+    "serve": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -36,7 +37,7 @@
   "homepage": "https://github.com/studiomotio/zeroclick#readme",
   "devDependencies": {
     "terser-webpack-plugin": "^2.3.4",
-    "webpack": "^4.41.5",
+    "webpack": "^4.41.6",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.3"
   }
