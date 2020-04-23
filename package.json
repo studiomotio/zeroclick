@@ -37,7 +37,7 @@
   "homepage": "https://github.com/studiomotio/zeroclick#readme",
   "devDependencies": {
     "terser-webpack-plugin": "^2.3.5",
-    "webpack": "^4.42.0",
+    "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   }
