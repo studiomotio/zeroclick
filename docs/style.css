@@ -88,6 +88,25 @@ h1 {
   animation: github-star 1.5s 500ms ease forwards;
 }
 
+@media (max-width: 640px) {
+  body {
+    justify-content: flex-start;
+    font-size: 30px;
+  }
+
+  main {
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: 12vw;
+  }
+
+  a::before {
+    height: 2px;
+  }
+}
+
 @keyframes github-star {
   from {
     opacity: 0;
