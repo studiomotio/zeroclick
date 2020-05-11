@@ -82,3 +82,18 @@ h1 {
   background: var(--vibrant-color);
   color: #fff;
 }
+
+.github-star {
+  opacity: 0;
+  animation: github-star 1.5s 500ms ease forwards;
+}
+
+@keyframes github-star {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
