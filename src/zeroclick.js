@@ -71,4 +71,24 @@ export default class ZeroClick {
   get props() {
     return this._props;
   }
+
+  /**
+    Get the timeout
+    @return {Number} [0..*] delay before dispatching the click event
+  */
+  get timeout() {
+    return this._props.timeout;
+  }
+
+  /**
+    Set the timeout
+    @param {Number} timeout - [0..*] delay before dispatching the click event
+  */
+  set timeout(timeout) {
+    if (typeof timeout !== 'number' || timeout < 0) {
+      throw new Error('Invalid timeout, you need to give a number above 0');
+    }
+
+    this._props.timeout = timeout;
+  }
 }
