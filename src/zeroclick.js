@@ -61,6 +61,7 @@ export default class ZeroClick {
   _reset() {
     if (typeof this._worker !== 'undefined') {
       clearTimeout(this._worker);
+      delete this._worker;
     }
   }
 
