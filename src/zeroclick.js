@@ -64,4 +64,11 @@ export default class ZeroClick {
     }
   }
 
+  /**
+    Get the live properties
+    @return {Object} defined and live properties
+  */
+  get props() {
+    return this._props;
+  }
 }
