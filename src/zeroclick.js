@@ -20,14 +20,14 @@ export default class ZeroClick {
           event: e,
           promise: new Promise(resolve => this._worker = setTimeout(resolve, this._props.timeout)).then(() => {
             window.location = target.href;
+          }).catch(() => {
+            this._reset();
           })
         };
       });
 
       target.addEventListener('mouseleave', () => {
-        if (typeof this._worker !== 'undefined') {
-          clearTimeout(this._worker);
-        }
+        this._reset();
       });
 
       target.addEventListener('click', (e) => {
@@ -37,9 +37,16 @@ export default class ZeroClick {
 
           return;
         }
-
-        clearTimeout(this._worker);
       });
     });
   }
+  /**
+    Reset the timeout worker
+  */
+  _reset() {
+    if (typeof this._worker !== 'undefined') {
+      clearTimeout(this._worker);
+    }
+  }
+
 }
