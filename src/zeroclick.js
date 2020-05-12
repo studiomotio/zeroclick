@@ -19,7 +19,7 @@ export default class ZeroClick {
         this._props.current = {
           event: e,
           promise: new Promise(resolve => this._worker = setTimeout(resolve, this._props.timeout)).then(() => {
-            window.location = target.href;
+            this._dispatch(target);
           }).catch(() => {
             this._reset();
           })
@@ -40,6 +40,21 @@ export default class ZeroClick {
       });
     });
   }
+
+  /**
+    Dispatch the click event
+    @param {HTMLElement} target - element on which the click event is dispatched
+  */
+  _dispatch(target) {
+    target.dispatchEvent(new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: false
+    }));
+
+    this._reset();
+  }
+
   /**
     Reset the timeout worker
   */
