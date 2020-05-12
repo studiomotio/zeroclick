@@ -25,7 +25,7 @@ export default class ZeroClick {
       });
 
       target.addEventListener('mouseleave', () => {
-        if (typeof this._props.current !== 'undefined') {
+        if (typeof this._worker !== 'undefined') {
           clearTimeout(this._worker);
         }
       });
