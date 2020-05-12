@@ -18,15 +18,15 @@ export default class ZeroClick {
       target.addEventListener('mouseenter', (e) => {
         this._props.current = {
           event: e,
-          worker: setTimeout(() => {
+          promise: new Promise(resolve => this._worker = setTimeout(resolve, this._props.timeout)).then(() => {
             window.location = target.href;
-          }, this._props.timeout),
+          })
         };
       });
 
       target.addEventListener('mouseleave', () => {
         if (typeof this._props.current !== 'undefined') {
-          clearTimeout(this._props.current.worker);
+          clearTimeout(this._worker);
         }
       });
 
@@ -38,7 +38,7 @@ export default class ZeroClick {
           return;
         }
 
-        clearTimeout(this._props.current.worker);
+        clearTimeout(this._worker);
       });
     });
   }
