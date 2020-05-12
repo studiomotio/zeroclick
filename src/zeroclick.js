@@ -26,8 +26,8 @@ export default class ZeroClick {
         };
       });
 
-      target.addEventListener('mouseleave', () => {
-        this._reset();
+      target.addEventListener('mouseleave', (e) => {
+        this._cancel(e.target);
       });
 
       target.addEventListener('click', (e) => {
@@ -37,6 +37,8 @@ export default class ZeroClick {
 
           return;
         }
+
+        this._reset();
       });
     });
   }
@@ -46,11 +48,31 @@ export default class ZeroClick {
     @param {HTMLElement} target - element on which the click event is dispatched
   */
   _dispatch(target) {
+    this._props.onDispatch({
+      target: target,
+      url: target.href
+    });
+
     target.dispatchEvent(new MouseEvent('click', {
       view: window,
       bubbles: true,
       cancelable: false
     }));
+
+    this._reset();
+  }
+
+  /**
+    Cancel the click event
+    @param {HTMLElement} target - element on which the click event is canceled
+  */
+  _cancel(target) {
+    if (typeof this._worker !== 'undefined') {
+      this._props.onCancel({
+        target: target,
+        url: target.href
+      });
+    }
 
     this._reset();
   }
