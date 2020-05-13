@@ -1,8 +1,7 @@
 # zeroclick – [![npm (scoped)](https://img.shields.io/npm/v/@studiomotio/zeroclick.svg)](https://www.npmjs.com/package/@studiomotio/zeroclick)
-A web concept for a **zero click** user experience.
+A **web concept** for a zero click user experience.
 
 [![zeroclick](logo.png "Discover the experiment")](https://studiomotio.github.io/zeroclick)
-
 
 ## License
 The project is developed under the **MIT** license:
@@ -12,7 +11,6 @@ The project is developed under the **MIT** license:
 - **Limitations**: Software is provided without warranty and the software author/license owner cannot be held liable for damages.
 
 Read the [full license](LICENSE.md) for more information about your rights.
-
 
 ## Questions?
 If you have any questions, please **feel free to contact us!**  
