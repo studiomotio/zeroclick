@@ -19,6 +19,8 @@ export default class ZeroClick {
     // loop through all elements that will use the plugin
     Array.from(document.querySelectorAll(this._props.on)).forEach((target) => {
       target.addEventListener('mouseenter', (e) => {
+        this._engage(e.target);
+
         this._props.current = {
           event: e,
           promise: new Promise(resolve => this._worker = setTimeout(resolve, this._props.timeout)).then(() => {
@@ -44,6 +46,14 @@ export default class ZeroClick {
         this._reset();
       });
     });
+  }
+
+  /**
+    Engage the link
+    @param {HTMLElement} target - element on which the mouseover event is engaged
+  */
+  _engage(target) {
+    target.dispatchEvent(new CustomEvent('engage'));
   }
 
   /**
