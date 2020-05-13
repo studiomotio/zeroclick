@@ -34,7 +34,7 @@ export default class ZeroClick {
       });
 
       target.addEventListener('click', (e) => {
-        if (this._props.preventClick) {
+        if (e.isTrusted && this._props.preventClick) {
           e.preventDefault();
           e.stopPropagation();
 
