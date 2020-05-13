@@ -4,7 +4,5 @@
 export default {
   on: 'a',
   timeout: 600,
-  preventClick: true,
-  onDispatch: () => {},
-  onCancel: () => {}
+  preventClick: true
 };

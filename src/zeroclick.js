@@ -51,10 +51,7 @@ export default class ZeroClick {
     @param {HTMLElement} target - element on which the click event is dispatched
   */
   _dispatch(target) {
-    this._props.onDispatch({
-      target: target,
-      url: target.href
-    });
+    target.dispatchEvent(new CustomEvent('dispatch'));
 
     target.dispatchEvent(new MouseEvent('click', {
       view: window,
@@ -71,10 +68,7 @@ export default class ZeroClick {
   */
   _cancel(target) {
     if (typeof this._worker !== 'undefined') {
-      this._props.onCancel({
-        target: target,
-        url: target.href
-      });
+      target.dispatchEvent(new CustomEvent('cancel'));
     }
 
     this._reset();
