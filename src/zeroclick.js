@@ -11,7 +11,10 @@ export default class ZeroClick {
   constructor(properties) {
 
     // assign custom user properties to defaults
-    this._props = Object.assign({}, defaults, properties);
+    this._props = {
+      ...defaults,
+      ...properties
+    };
 
     // loop through all elements that will use the plugin
     Array.from(document.querySelectorAll(this._props.on)).forEach((target) => {
