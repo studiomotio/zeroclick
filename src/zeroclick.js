@@ -54,6 +54,7 @@ export default class ZeroClick {
   */
   _engage(target) {
     target.dispatchEvent(new CustomEvent('engage'));
+    target.setAttribute('data-zeroclick', 'engage');
   }
 
   /**
@@ -62,6 +63,7 @@ export default class ZeroClick {
   */
   _dispatch(target) {
     target.dispatchEvent(new CustomEvent('dispatch'));
+    target.setAttribute('data-zeroclick', 'dispatch');
 
     target.dispatchEvent(new MouseEvent('click', {
       view: window,
@@ -77,6 +79,7 @@ export default class ZeroClick {
   _cancel(target) {
     if (typeof this._worker !== 'undefined') {
       target.dispatchEvent(new CustomEvent('cancel'));
+      target.setAttribute('data-zeroclick', 'cancel');
     }
 
     this._reset();
