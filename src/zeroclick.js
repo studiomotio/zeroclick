@@ -56,7 +56,7 @@ export default class ZeroClick {
     target.dispatchEvent(new MouseEvent('click', {
       view: window,
       bubbles: true,
-      cancelable: false
+      cancelable: true
     }));
 
     this._reset();
