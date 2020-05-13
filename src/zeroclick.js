@@ -68,8 +68,6 @@ export default class ZeroClick {
       bubbles: true,
       cancelable: true
     }));
-
-    this._reset();
   }
 
   /**
