@@ -3,6 +3,19 @@ A **web concept** for a zero click user experience.
 
 [![zeroclick](logo.png "Discover the experiment")](https://studiomotio.github.io/zeroclick)
 
+## Intro
+This plugin is a **web concept for a zero click user experience**, meaning that the user doesn't need to click any links to properly navigate between your website's pages.
+
+Even if this package may seems funny at first, it has many advantages:
+- discover the no click navigation: just hover the link and go!
+- improve accessibility for users that could have difficulties to click
+- works with `Promise` transitions
+- works great with [@barbajs](http://barba.js.org/)
+- compatible with touch screens
+- perfect for a cool portfolio!
+
+> The package is currently published in beta version.
+
 ## License
 The project is developed under the **MIT** license:
 
