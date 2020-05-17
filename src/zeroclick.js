@@ -16,8 +16,13 @@ export default class ZeroClick {
       ...properties
     };
 
+    // select all elements if a string is provided
+    if (typeof this._props.on === 'string') {
+      this._props.on = document.querySelectorAll(this._props.on);
+    }
+
     // loop through all elements that will use the plugin
-    Array.from(document.querySelectorAll(this._props.on)).forEach((target) => {
+    Array.from(this._props.on).forEach((target) => {
       target.addEventListener('mouseenter', (e) => {
         this._engage(e.target);
 
