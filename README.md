@@ -16,6 +16,9 @@ Even if this package may seems funny at first, it has many advantages:
 
 > The package is currently published in beta version.
 
+## Disclaimer
+As the plugin create an **"untrusted" `MouseEvent`** in order to simulate a user "click", some browsers may interpret `target="_blank"` links as **intrusive pop-up**. Be sure to ignore/ban those kind of links from your site.
+
 ## License
 The project is developed under the **MIT** license:
 
