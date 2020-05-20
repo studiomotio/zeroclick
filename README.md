@@ -31,6 +31,25 @@ npm install @studiomotio/zeroclick
 yarn add @studiomotio/zeroclick
 ```
 
+### Params
+--
+
+### Events
+#### Custom events
+
+
+#### Data attributes
+In addition to events, the plugin provide a bunch of `data-attributes`, to easily add custom styles/scripts in your application.
+
+- `data-zeroclick="engage"`  
+  you place the mouse cursor hover the link
+
+- `data-zeroclick="dispatch"`  
+  the `click` event is dispatched on the link
+
+- `data-zeroclick="cancel"`  
+you remove the mouse cursor from the link before the event is dispatched
+
 ## Disclaimer
 As the plugin create an **"untrusted" `MouseEvent`** in order to simulate a user "click", some browsers may interpret `target="_blank"` links as **intrusive pop-up**. Be sure to ignore/ban those kind of links from your site.
 
