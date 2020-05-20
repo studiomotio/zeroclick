@@ -3,7 +3,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 
-module.exports = (argv) => merge(require('./webpack.common.js')(argv), {
+module.exports = () => merge(require('./webpack.common.js')(), {
   mode: 'development',
   output: {
     filename: 'zeroclick.js'

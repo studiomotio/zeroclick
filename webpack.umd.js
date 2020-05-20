@@ -7,7 +7,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 // build preamble
 const preamble = `/*!\n  ${pack.name} – ${pack.description}\n  ${pack.author.name} ${pack.author.github} ${new Date().getFullYear()} ${pack.license}\n  ${pack.version}\n*/`;
 
-module.exports = (argv) => merge(require('./webpack.common.js')(argv), {
+module.exports = () => merge(require('./webpack.common.js')(), {
   mode: 'production',
   watch: false,
   output: {
