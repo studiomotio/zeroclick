@@ -6,7 +6,9 @@
   },
   "extends": "eslint:recommended",
   "globals": {
-    "ZeroClick": false
+    "ZeroClick": false,
+    "barba": false,
+    "barbaCss": false
   },
   "parserOptions": {
     "ecmaVersion": 9,
