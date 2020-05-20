@@ -19,6 +19,18 @@ Even if this package may seems funny at first, it has many advantages:
 ## How it works
 The package avoid users from clicking on links by creating a fake user `click` event through `MouseEvent` API. The default event is prevented and called lately, when the `timeout` time has elapsed or your custom `Promise` resolved.
 
+## Get started
+### Install
+ZeroClick is published on the **NPM** *(Node Package Manager)* registry, so you can install it through the command line interpreter using your favorite package manager:
+
+```console
+# npm
+npm install @studiomotio/zeroclick
+
+# yarn
+yarn add @studiomotio/zeroclick
+```
+
 ## Disclaimer
 As the plugin create an **"untrusted" `MouseEvent`** in order to simulate a user "click", some browsers may interpret `target="_blank"` links as **intrusive pop-up**. Be sure to ignore/ban those kind of links from your site.
 
