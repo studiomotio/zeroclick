@@ -132,3 +132,6 @@ h1 {
   transition: opacity 400ms ease;
 }
 
+[data-zeroclick='dispatch'] {
+  color: var(--base-color);
+}
