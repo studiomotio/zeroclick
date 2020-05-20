@@ -35,20 +35,41 @@ yarn add @studiomotio/zeroclick
 --
 
 ### Events
-#### Custom events
+#### Link states
+The click process is split into **three states**:
 
+| Name       | Description                                                                  |
+|------------|------------------------------------------------------------------------------|
+| `engage`   | you place the **mouse cursor hover the link**                                |
+| `dispatch` | the event is **dispatched on the link**                                      |
+| `cancel`   | you **remove the mouse cursor from the link** before the event is dispatched |
+
+#### Custom events
+You can add an **event listener on a specific link** using:
+
+```js
+document.querySelector('.my-link').addEventListener('dispatch', (e) => {
+  // do something when the click event is dispatched on .my-link
+});
+```
+
+#### Callbacks
+You can **call specific code globally** using callbacks:
+
+```js
+new ZeroClick({
+  onDispatch: () => {
+    // do something when a link click event is dispatched
+  }
+});
+```
 
 #### Data attributes
-In addition to events, the plugin provide a bunch of `data-attributes`, to easily add custom styles/scripts in your application.
+In addition, the plugin provide a bunch of `data-attributes`, to easily add custom styles/scripts in your application.
 
 - `data-zeroclick="engage"`  
-  you place the mouse cursor hover the link
-
 - `data-zeroclick="dispatch"`  
-  the `click` event is dispatched on the link
-
 - `data-zeroclick="cancel"`  
-you remove the mouse cursor from the link before the event is dispatched
 
 ## Disclaimer
 As the plugin create an **"untrusted" `MouseEvent`** in order to simulate a user "click", some browsers may interpret `target="_blank"` links as **intrusive pop-up**. Be sure to ignore/ban those kind of links from your site.
