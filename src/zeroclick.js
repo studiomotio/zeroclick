@@ -58,6 +58,11 @@ export default class ZeroClick {
     @param {HTMLElement} target - element on which the mouseover event is engaged
   */
   _engage(target) {
+    this._props.onEngage({
+      target: target,
+      url: target.href
+    });
+
     target.dispatchEvent(new CustomEvent('engage'));
     target.setAttribute('data-zeroclick', 'engage');
   }
@@ -67,6 +72,11 @@ export default class ZeroClick {
     @param {HTMLElement} target - element on which the click event is dispatched
   */
   _dispatch(target) {
+    this._props.onDispatch({
+      target: target,
+      url: target.href
+    });
+
     target.dispatchEvent(new CustomEvent('dispatch'));
     target.setAttribute('data-zeroclick', 'dispatch');
 
@@ -83,6 +93,11 @@ export default class ZeroClick {
   */
   _cancel(target) {
     if (typeof this._worker !== 'undefined') {
+      this._props.onCancel({
+        target: target,
+        url: target.href
+      });
+
       target.dispatchEvent(new CustomEvent('cancel'));
       target.setAttribute('data-zeroclick', 'cancel');
     }
