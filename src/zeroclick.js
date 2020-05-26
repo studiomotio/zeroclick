@@ -16,6 +16,9 @@ export default class ZeroClick {
       ...properties
     };
 
+    // init global navigation state
+    this._navigating = false;
+
     // select all elements if a string is provided
     if (typeof this._props.on === 'string') {
       this._props.on = document.querySelectorAll(this._props.on);
@@ -24,11 +27,22 @@ export default class ZeroClick {
     // loop through all elements that will use the plugin
     Array.from(this._props.on).forEach((target) => {
       target.addEventListener('mouseenter', (e) => {
+        if (this._navigating) {
+          return;
+        }
+
         this._engage(e.target);
 
         this._props.current = {
           event: e,
-          promise: new Promise(resolve => this._worker = setTimeout(resolve, this._props.timeout)).then(() => {
+          promise: new Promise((resolve, reject) => {
+            if (typeof this._props.await === 'function') {
+              this._props.await(resolve, reject);
+              this._worker = reject;
+            } else {
+              this._worker = setTimeout(resolve, this._props.timeout);
+            }
+          }).then(() => {
             this._dispatch(target);
           }).catch(() => {
             this._reset();
@@ -37,10 +51,18 @@ export default class ZeroClick {
       });
 
       target.addEventListener('mouseleave', (e) => {
+        if (this._navigating) {
+          return;
+        }
+
         this._cancel(e.target);
       });
 
       target.addEventListener('click', (e) => {
+        if (this._navigating) {
+          return;
+        }
+
         if (e.isTrusted && this._props.preventClick) {
           e.preventDefault();
           e.stopPropagation();
@@ -48,7 +70,9 @@ export default class ZeroClick {
           return;
         }
 
-        this._reset();
+        // clicking on a link is considered as cancelling the process
+        this._cancel(e.target);
+        this._navigating = true;
       });
     });
   }
@@ -72,6 +96,8 @@ export default class ZeroClick {
     @param {HTMLElement} target - element on which the click event is dispatched
   */
   _dispatch(target) {
+    this._navigating = true;
+
     this._props.onDispatch({
       target: target,
       url: target.href
@@ -85,6 +111,8 @@ export default class ZeroClick {
       bubbles: true,
       cancelable: true
     }));
+
+    this._reset();
   }
 
   /**
@@ -92,27 +120,32 @@ export default class ZeroClick {
     @param {HTMLElement} target - element on which the click event is canceled
   */
   _cancel(target) {
-    if (typeof this._worker !== 'undefined') {
-      this._props.onCancel({
-        target: target,
-        url: target.href
-      });
-
-      target.dispatchEvent(new CustomEvent('cancel'));
-      target.setAttribute('data-zeroclick', 'cancel');
+    if (typeof this._worker === 'undefined') {
+      return;
     }
 
-    this._reset();
+    if (typeof this._worker === 'function') {
+      this._worker('cancel');
+    }
+
+    if (typeof this._worker === 'number') {
+      clearTimeout(this._worker);
+    }
+
+    this._props.onCancel({
+      target: target,
+      url: target.href
+    });
+
+    target.dispatchEvent(new CustomEvent('cancel'));
+    target.setAttribute('data-zeroclick', 'cancel');
   }
 
   /**
-    Reset the timeout worker
+    Reset the current worker
   */
   _reset() {
-    if (typeof this._worker !== 'undefined') {
-      clearTimeout(this._worker);
-      delete this._worker;
-    }
+    delete this._worker;
   }
 
   /**
