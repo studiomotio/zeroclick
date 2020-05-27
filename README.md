@@ -6,22 +6,20 @@ A **web concept** for a zero click user experience.
 ## Intro
 This plugin is a **web concept for a zero click user experience**, meaning that the user doesn't need to click any links to properly navigate between your website's pages.
 
-Even if this package may seems funny at first, it has many advantages:
+Even if this package may seems funny at first, it has **many advantages**:
 - discover the no click navigation: just hover the link and go!
 - improve accessibility for users that could have difficulties to click
-- works with `Promise` transitions
+- use `Promise` transitions: do something before leaving the page
 - works great with [@barbajs](http://barba.js.org/)
 - compatible with touch screens
 - perfect for a cool portfolio!
-
-> The package is currently published in beta version.
 
 ## How it works
 The package avoid users from clicking on links by creating a fake user `click` event through `MouseEvent` API. The default event is prevented and called lately, when the `timeout` time has elapsed or your custom `Promise` resolved.
 
 ## Get started
 ### Install
-ZeroClick is published on the **NPM** *(Node Package Manager)* registry, so you can install it through the command line interpreter using your favorite package manager:
+The plugin is published on the **NPM registry**, so you can install it through the command line interpreter using your favorite package manager:
 
 ```console
 # npm
