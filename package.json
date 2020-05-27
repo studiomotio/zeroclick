@@ -2,12 +2,15 @@
   "name": "@studiomotio/zeroclick",
   "version": "0.1.0",
   "description": "A web concept for a zero click user experience",
+  "source": "src/zeroclick.js",
   "main": "dist/zeroclick.umd.js",
+  "browser": "dist/zeroclick.umd.js",
   "unpkg": "dist/zeroclick.umd.js",
+  "module": "dist/zeroclick.mjs",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
     "dev": "webpack --config webpack.dev.js --progress",
-    "build": "webpack --config webpack.umd.js --progress"
+    "build": "microbundle --no-sourcemap"
   },
   "repository": {
     "type": "git",
