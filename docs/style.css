@@ -83,9 +83,13 @@ h1 {
   color: #fff;
 }
 
-.github-star {
+.github-button {
   opacity: 0;
   animation: github-star 1.5s 500ms ease forwards;
+}
+
+.github-star {
+  width: 66px;
 }
 
 @media (max-width: 640px) {
