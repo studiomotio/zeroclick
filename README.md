@@ -28,6 +28,12 @@ npm install @studiomotio/zeroclick
 # yarn
 yarn add @studiomotio/zeroclick
 ```
+Then import it like any other module inside your build:
+```js
+import zeroclick from '@studiomotio/zeroclick';
+
+zeroclick.init();
+```
 
 ### Params
 --
