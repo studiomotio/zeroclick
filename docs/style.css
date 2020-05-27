@@ -72,24 +72,29 @@ p a:hover::before {
 }
 
 h1 {
+  display: inline-flex;
+  align-items: center;
   color: var(--vibrant-color);
   font-weight: 400;
 }
 
 .invert {
   margin: 0 5px;
-  padding: 4px 10px;
+  padding: 0 10px;
   background: var(--vibrant-color);
   color: #fff;
 }
 
 .github-button {
+  display: inline-flex;
+  margin-left: 20px;
   opacity: 0;
   animation: github-star 1.5s 500ms ease forwards;
 }
 
 .github-star {
-  width: 66px;
+  height: 30px;
+}
 }
 
 @media (max-width: 640px) {
