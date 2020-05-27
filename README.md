@@ -57,7 +57,7 @@ document.querySelector('.my-link').addEventListener('dispatch', (e) => {
 You can **call specific code globally** using callbacks:
 
 ```js
-new ZeroClick({
+zeroclick.init({
   onDispatch: () => {
     // do something when a link click event is dispatched
   }

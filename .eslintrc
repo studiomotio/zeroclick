@@ -6,7 +6,7 @@
   },
   "extends": "eslint:recommended",
   "globals": {
-    "ZeroClick": false,
+    "zeroclick": false,
     "barba": false,
     "barbaCss": false
   },

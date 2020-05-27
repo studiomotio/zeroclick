@@ -2,13 +2,13 @@
 
 import defaults from './defaults.js';
 
-export default class ZeroClick {
+class ZeroClick {
 
   /**
     Class constructor
     @param {Object} properties - custom properties of the class
   */
-  constructor(properties) {
+  init(properties) {
 
     // assign custom user properties to defaults
     this._props = {
@@ -176,3 +176,7 @@ export default class ZeroClick {
     this._props.timeout = timeout;
   }
 }
+
+// default export
+const zeroclick = new ZeroClick();
+export default zeroclick;

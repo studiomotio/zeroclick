@@ -3,10 +3,10 @@
 let script = document.createElement('script');
 
 script.onload = () => {
-  new ZeroClick();
+  zeroclick.init();
 
   barba.hooks.enter(() => {
-    new ZeroClick();
+    zeroclick.init();
   });
 
   barba.use(barbaCss);
