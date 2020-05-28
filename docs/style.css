@@ -104,18 +104,18 @@ h1 {
   opacity: 0.5;
 }
 
-.fade-leave,
-.fade-enter-to {
+.barba-leave,
+.barba-enter-to {
   opacity: 1;
 }
 
-.fade-enter,
-.fade-leave-to {
+.barba-enter,
+.barba-leave-to {
   opacity: 0;
 }
 
-.fade-leave-active,
-.fade-enter-active {
+.barba-leave-active,
+.barba-enter-active {
   transition: opacity 400ms ease;
 }
 
