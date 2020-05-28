@@ -85,6 +85,10 @@ h1 {
   color: #fff;
 }
 
+[data-zeroclick='dispatch'] {
+  color: var(--base-color);
+}
+
 .github-button {
   display: inline-flex;
   margin-left: 20px;
@@ -95,6 +99,24 @@ h1 {
 .github-star {
   height: 30px;
 }
+
+.github-button:hover {
+  opacity: 0.5;
+}
+
+.fade-leave,
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-leave-active,
+.fade-enter-active {
+  transition: opacity 400ms ease;
 }
 
 @media (max-width: 640px) {
@@ -124,23 +146,4 @@ h1 {
   to {
     opacity: 1;
   }
-}
-
-.fade-leave,
-.fade-enter-to {
-  opacity: 1;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-leave-active,
-.fade-enter-active {
-  transition: opacity 400ms ease;
-}
-
-[data-zeroclick='dispatch'] {
-  color: var(--base-color);
 }
