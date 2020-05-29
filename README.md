@@ -78,6 +78,9 @@ In addition, the plugin provide a bunch of `data-attributes`, to easily add cust
 ## Disclaimer
 As the plugin create an **"untrusted" `MouseEvent`** in order to simulate a user "click", some browsers may interpret `target="_blank"` links as **intrusive pop-up**. Be sure to ignore/ban those kind of links from your site.
 
+## Contribute
+If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](CONTRIBUTING.md) before**. Thanks for taking time to contribute to Instacam.
+
 ## License
 The project is developed under the **MIT** license:
 
