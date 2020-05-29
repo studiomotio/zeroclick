@@ -7,10 +7,12 @@ script.onload = () => {
     on: 'a:not(.github-button)'
   };
 
-  zeroclick.init(options);
+  barba.hooks.once(() => {
+    zeroclick.init(options);
+  });
 
   barba.hooks.enter(() => {
-    zeroclick.init(options);
+    zeroclick.refresh();
   });
 
   barba.use(barbaCss);
