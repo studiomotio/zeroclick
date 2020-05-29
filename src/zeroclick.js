@@ -54,6 +54,14 @@ class ZeroClick {
   }
 
   /**
+    Refresh all event listeners using the current settings
+  */
+  refresh() {
+    this.destroy();
+    this.init(this._props);
+  }
+
+  /**
     Engage the link
     @param {HTMLElement} target - element on which the mouseover event is engaged
   */
