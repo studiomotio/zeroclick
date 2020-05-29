@@ -26,17 +26,32 @@ class ZeroClick {
 
     // loop through all elements that will use the plugin
     Array.from(this._props.on).forEach((target) => {
-      target.addEventListener('mouseenter', (e) => {
-        this._engage(e.target);
-      });
+      target.handlers = {
+        engage: () => {
+          this._engage(target);
+        },
+        cancel: () => {
+          this._cancel(target);
+        },
+        click: (e) => {
+          this._click(e);
+        }
+      };
 
-      target.addEventListener('mouseleave', (e) => {
-        this._cancel(e.target);
-      });
+      target.addEventListener('mouseenter', target.handlers.engage);
+      target.addEventListener('mouseleave', target.handlers.cancel);
+      target.addEventListener('click', target.handlers.click);
+    });
+  }
 
-      target.addEventListener('click', (e) => {
-        this._click(e);
-      });
+  /**
+    Destroy all event listeners
+  */
+  destroy() {
+    Array.from(this._props.on).forEach((target) => {
+      target.removeEventListener('mouseenter', target.handlers.engage);
+      target.removeEventListener('mouseleave', target.handlers.cancel);
+      target.removeEventListener('click', target.handlers.click);
     });
   }
 
