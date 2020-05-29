@@ -27,52 +27,15 @@ class ZeroClick {
     // loop through all elements that will use the plugin
     Array.from(this._props.on).forEach((target) => {
       target.addEventListener('mouseenter', (e) => {
-        if (this._navigating) {
-          return;
-        }
-
         this._engage(e.target);
-
-        this._props.current = {
-          event: e,
-          promise: new Promise((resolve, reject) => {
-            if (typeof this._props.await === 'function') {
-              this._props.await(resolve, reject);
-              this._worker = reject;
-            } else {
-              this._worker = setTimeout(resolve, this._props.timeout);
-            }
-          }).then(() => {
-            this._dispatch(target);
-          }).catch(() => {
-            this._reset();
-          })
-        };
       });
 
       target.addEventListener('mouseleave', (e) => {
-        if (this._navigating) {
-          return;
-        }
-
         this._cancel(e.target);
       });
 
       target.addEventListener('click', (e) => {
-        if (this._navigating) {
-          return;
-        }
-
-        if (e.isTrusted && this._props.preventClick) {
-          e.preventDefault();
-          e.stopPropagation();
-
-          return;
-        }
-
-        // clicking on a link is considered as cancelling the process
-        this._cancel(e.target);
-        this._navigating = true;
+        this._click(e);
       });
     });
   }
@@ -82,6 +45,10 @@ class ZeroClick {
     @param {HTMLElement} target - element on which the mouseover event is engaged
   */
   _engage(target) {
+    if (this._navigating) {
+      return;
+    }
+
     this._props.onEngage({
       target: target,
       url: target.href
@@ -89,6 +56,22 @@ class ZeroClick {
 
     target.dispatchEvent(new CustomEvent('engage'));
     target.setAttribute('data-zeroclick', 'engage');
+
+    this._props.current = {
+      target: target,
+      promise: new Promise((resolve, reject) => {
+        if (typeof this._props.await === 'function') {
+          this._props.await(resolve, reject);
+          this._worker = reject;
+        } else {
+          this._worker = setTimeout(resolve, this._props.timeout);
+        }
+      }).then(() => {
+        this._dispatch(target);
+      }).catch(() => {
+        this._reset();
+      })
+    };
   }
 
   /**
@@ -120,6 +103,10 @@ class ZeroClick {
     @param {HTMLElement} target - element on which the click event is canceled
   */
   _cancel(target) {
+    if (this._navigating) {
+      return;
+    }
+
     if (typeof this._worker === 'undefined') {
       return;
     }
@@ -139,6 +126,23 @@ class ZeroClick {
 
     target.dispatchEvent(new CustomEvent('cancel'));
     target.setAttribute('data-zeroclick', 'cancel');
+  }
+
+  /**
+    Manage the user click event
+    @param {MouseEvent} e - user click event
+  */
+  _click(e) {
+    if (e.isTrusted && this._props.preventClick) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      return;
+    }
+
+    // clicking on a link is considered as cancelling the process
+    this._cancel(e.target);
+    this._navigating = true;
   }
 
   /**
