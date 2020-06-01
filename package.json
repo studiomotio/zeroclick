@@ -39,6 +39,7 @@
   },
   "homepage": "https://github.com/studiomotio/zeroclick#readme",
   "devDependencies": {
+    "jest": "^26.0.1",
     "microbundle": "^0.12.0",
     "terser-webpack-plugin": "^3.0.2",
     "webpack": "^4.43.0",
