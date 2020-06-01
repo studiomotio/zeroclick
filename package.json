@@ -10,7 +10,8 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
     "dev": "webpack --config webpack.dev.js --progress",
-    "build": "microbundle --no-sourcemap"
+    "build": "microbundle --no-sourcemap",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
