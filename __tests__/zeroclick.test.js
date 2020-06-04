@@ -1,14 +1,12 @@
+import defaults from '../src/defaults';
 import zeroclick from '../src/zeroclick';
 
 it('has defaults', () => {
   zeroclick.init();
 
-  expect(zeroclick.props).toBeDefined();
-  expect(zeroclick.props.on).toBe('a');
-  expect(zeroclick.props.preventClick).toBeTruthy();
-  expect(zeroclick.props.onEngage).toBeInstanceOf(Function);
-  expect(zeroclick.props.onDispatch).toBeInstanceOf(Function);
-  expect(zeroclick.props.onCancel).toBeInstanceOf(Function);
+  expect(zeroclick.props).toStrictEqual(defaults);
+  expect(zeroclick._navigating).toBeFalsy();
+  expect(zeroclick._worker).toBeUndefined();
 });
 
 it('could have custom props that override defaults', () => {
