@@ -50,6 +50,7 @@ describe('handle _nodelist event listeners', () => {
     html.link.dispatchEvent(html.mouseenterEvent);
 
     expect(spy).toHaveBeenCalledTimes(1);
+    spy.mockRestore();
   });
 
   it('should listen to mouseleave', () => {
@@ -59,6 +60,7 @@ describe('handle _nodelist event listeners', () => {
     html.link.dispatchEvent(html.mouseleaveEvent);
 
     expect(spy).toHaveBeenCalledTimes(1);
+    spy.mockRestore();
   });
 
   it('should listen to click', () => {
@@ -68,5 +70,6 @@ describe('handle _nodelist event listeners', () => {
     html.link.dispatchEvent(html.clickEvent);
 
     expect(spy).toHaveBeenCalledTimes(1);
+    spy.mockRestore();
   });
 });
