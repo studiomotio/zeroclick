@@ -1,5 +1,16 @@
+import * as dom from '../__mocks__/dom';
 import defaults from '../src/defaults';
 import zeroclick from '../src/zeroclick';
+
+let html;
+
+beforeEach(() => {
+  html = dom.init();
+});
+
+afterEach(() => {
+  dom.clear();
+});
 
 it('has defaults', () => {
   zeroclick.init();
@@ -18,6 +29,8 @@ it('could have custom props that override defaults', () => {
 });
 
 it('should have _nodelist properly populated', () => {
+  dom.clear();
+
   let link1 = document.createElement('a');
   document.body.appendChild(link1);
   let link2 = document.createElement('a');
