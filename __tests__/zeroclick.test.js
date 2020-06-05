@@ -84,3 +84,13 @@ it('should remove event listeners on destroy', () => {
   expect(spy).toHaveBeenCalledTimes(0);
   spy.mockRestore();
 });
+
+it('should use previous props on refresh', () => {
+  zeroclick.init({
+    timeout: 700
+  });
+
+  zeroclick.refresh();
+
+  expect(zeroclick.props.timeout).toBe(700);
+});
