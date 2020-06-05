@@ -2,6 +2,7 @@ import * as dom from '../__mocks__/dom';
 import defaults from '../src/defaults';
 import zeroclick from '../src/zeroclick';
 
+let spy = jest.SpyInstance;
 let html;
 
 beforeEach(() => {
@@ -39,4 +40,33 @@ it('should have _nodelist properly populated', () => {
   zeroclick.init();
 
   expect(zeroclick._nodelist.length).toBe(2);
+});
+
+describe('handle _nodelist event listeners', () => {
+  it('should listen to mouseenter', () => {
+    zeroclick.init();
+
+    spy = jest.spyOn(zeroclick, '_engage');
+    html.link.dispatchEvent(html.mouseenterEvent);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should listen to mouseleave', () => {
+    zeroclick.init();
+
+    spy = jest.spyOn(zeroclick, '_cancel');
+    html.link.dispatchEvent(html.mouseleaveEvent);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should listen to click', () => {
+    zeroclick.init();
+
+    spy = jest.spyOn(zeroclick, '_click');
+    html.link.dispatchEvent(html.clickEvent);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
 });
