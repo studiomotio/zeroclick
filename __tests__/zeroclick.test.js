@@ -73,3 +73,15 @@ describe('handle _nodelist event listeners', () => {
     spy.mockRestore();
   });
 });
+
+it('should remove event listeners on destroy', () => {
+  zeroclick.init();
+  zeroclick.destroy();
+
+  // spy.mockClear();
+  spy = jest.spyOn(zeroclick, '_engage');
+  html.link.dispatchEvent(html.mouseenterEvent);
+
+  expect(spy).toHaveBeenCalledTimes(0);
+  spy.mockRestore();
+});
