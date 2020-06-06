@@ -20,7 +20,7 @@ class ZeroClick {
     this._navigating = false;
 
     // select all elements if a string is provided
-    this._nodelist = typeof this._props.on === 'string' ? [...document.querySelectorAll(this._props.on)] : [this._props.on];
+    this._nodelist = typeof this._props.on === 'string' ? [...document.querySelectorAll(this._props.on)] : [...this._props.on];
 
     // loop through all elements that will use the plugin
     this._nodelist.forEach((target) => {
