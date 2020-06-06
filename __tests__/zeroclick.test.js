@@ -124,6 +124,31 @@ describe('handle event listeners', () => {
     expect(spy).toHaveReturned();
     spy.mockRestore();
   });
+
+  it('should do nothing on enter when navigating', () => {
+    zeroclick.init({
+      preventClick: false
+    });
+
+    html.link.dispatchEvent(html.clickEvent);
+    spy = jest.spyOn(zeroclick, '_engage');
+    html.link.dispatchEvent(html.mouseenterEvent);
+
+    expect(spy).toHaveReturned();
+    spy.mockRestore();
+  });
+
+  it('should do nothing on cancel when navigating', () => {
+    zeroclick.init({
+      preventClick: false
+    });
+
+    spy = jest.spyOn(zeroclick, '_cancel');
+    html.link.dispatchEvent(html.clickEvent);
+
+    expect(spy).toHaveReturned();
+    spy.mockRestore();
+  });
 });
 
 describe('handle promises', () => {
