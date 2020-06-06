@@ -124,3 +124,20 @@ it('should dispatch navigation when using a timeout promise', () => {
     spy.mockRestore();
   });
 });
+
+it('should dispatch navigation when using a custom promise', () => {
+  zeroclick.init({
+    await: (resolve) => {
+      resolve();
+    }
+  });
+
+  spy = jest.spyOn(zeroclick, '_dispatch');
+  html.link.dispatchEvent(html.mouseenterEvent);
+
+  return zeroclick.props.current.promise.then(() => {
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(zeroclick._navigating).toBeTruthy();
+    spy.mockRestore();
+  });
+});
