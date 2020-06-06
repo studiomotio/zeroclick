@@ -4,7 +4,7 @@ export function init() {
   const clickEvent = new MouseEvent('click');
 
   const link = document.createElement('a');
-  link.href = 'sample.html';
+  link.href = '/';
 
   document.body.appendChild(link);
 
