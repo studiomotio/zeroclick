@@ -213,4 +213,21 @@ describe('handle promises', () => {
       spy.mockRestore();
     });
   });
+
+  it('should reject promise on cancel', () => {
+    zeroclick.init({
+      await: (resolve, reject) => {
+        reject();
+      }
+    });
+
+    html.link.dispatchEvent(html.mouseenterEvent);
+    spy = jest.spyOn(zeroclick, '_worker');
+    html.link.dispatchEvent(html.mouseleaveEvent);
+
+    return zeroclick.props.current.promise.then(() => {
+      expect(spy).toHaveBeenCalledTimes(1);
+      spy.mockRestore();
+    });
+  });
 });
