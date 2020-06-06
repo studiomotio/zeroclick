@@ -22,23 +22,7 @@ it('has defaults', () => {
   expect(zeroclick._worker).toBeUndefined();
 });
 
-it('could have custom props that override defaults', () => {
-  zeroclick.init({
-    timeout: 700
-  });
-
-  expect(zeroclick.props.timeout).toBe(700);
-});
-
-it('could have props.on set with a custom query selector', () => {
-  zeroclick.init({
-    on: document.querySelectorAll('a')
-  });
-
-  expect(zeroclick._nodelist.length).toBe(1);
-});
-
-it('should have _nodelist properly populated', () => {
+it('should have nodelist properly populated', () => {
   dom.clear();
 
   let link1 = document.createElement('a');
@@ -51,7 +35,35 @@ it('should have _nodelist properly populated', () => {
   expect(zeroclick._nodelist.length).toBe(2);
 });
 
-describe('handle _nodelist event listeners', () => {
+describe('handle properties', () => {
+  it('could have custom props that override defaults', () => {
+    zeroclick.init({
+      timeout: 700
+    });
+
+    expect(zeroclick.props.timeout).toBe(700);
+  });
+
+  it('could have props.on set with a custom query selector', () => {
+    zeroclick.init({
+      on: document.querySelectorAll('a')
+    });
+
+    expect(zeroclick._nodelist.length).toBe(1);
+  });
+
+  it('should use previous props on refresh', () => {
+    zeroclick.init({
+      timeout: 700
+    });
+
+    zeroclick.refresh();
+
+    expect(zeroclick.props.timeout).toBe(700);
+  });
+});
+
+describe('handle event listeners', () => {
   it('should listen to mouseenter', () => {
     zeroclick.init();
 
@@ -89,71 +101,65 @@ describe('handle _nodelist event listeners', () => {
 
     spy.mockRestore();
   });
-});
 
-it('should remove event listeners on destroy', () => {
-  zeroclick.init();
-  zeroclick.destroy();
+  it('should remove event listeners on destroy', () => {
+    zeroclick.init();
+    zeroclick.destroy();
 
-  spy = jest.spyOn(zeroclick, '_engage');
-  html.link.dispatchEvent(html.mouseenterEvent);
+    spy = jest.spyOn(zeroclick, '_engage');
+    html.link.dispatchEvent(html.mouseenterEvent);
 
-  expect(spy).toHaveBeenCalledTimes(0);
-  spy.mockRestore();
-});
-
-it('should use previous props on refresh', () => {
-  zeroclick.init({
-    timeout: 700
-  });
-
-  zeroclick.refresh();
-
-  expect(zeroclick.props.timeout).toBe(700);
-});
-
-it('should dispatch navigation when using a timeout promise', () => {
-  zeroclick.init();
-
-  spy = jest.spyOn(zeroclick, '_dispatch');
-  html.link.dispatchEvent(html.mouseenterEvent);
-
-  return zeroclick.props.current.promise.then(() => {
-    expect(spy).toHaveBeenCalledTimes(1);
-    expect(zeroclick._navigating).toBeTruthy();
+    expect(spy).toHaveBeenCalledTimes(0);
     spy.mockRestore();
   });
 });
 
-it('should dispatch navigation when using a custom promise', () => {
-  zeroclick.init({
-    await: (resolve) => {
-      resolve();
-    }
+describe('handle promises', () => {
+  it('should dispatch navigation when using a timeout promise', () => {
+    zeroclick.init();
+
+    spy = jest.spyOn(zeroclick, '_dispatch');
+    html.link.dispatchEvent(html.mouseenterEvent);
+
+    return zeroclick.props.current.promise.then(() => {
+      expect(spy).toHaveBeenCalledTimes(1);
+      expect(zeroclick._navigating).toBeTruthy();
+      expect(html.link.getAttribute('data-zeroclick')).toBe('dispatch');
+      spy.mockRestore();
+    });
   });
 
-  spy = jest.spyOn(zeroclick, '_dispatch');
-  html.link.dispatchEvent(html.mouseenterEvent);
+  it('should dispatch navigation when using a custom promise', () => {
+    zeroclick.init({
+      await: (resolve) => {
+        resolve();
+      }
+    });
 
-  return zeroclick.props.current.promise.then(() => {
-    expect(spy).toHaveBeenCalledTimes(1);
-    expect(zeroclick._navigating).toBeTruthy();
-    spy.mockRestore();
+    spy = jest.spyOn(zeroclick, '_dispatch');
+    html.link.dispatchEvent(html.mouseenterEvent);
+
+    return zeroclick.props.current.promise.then(() => {
+      expect(spy).toHaveBeenCalledTimes(1);
+      expect(zeroclick._navigating).toBeTruthy();
+      expect(html.link.getAttribute('data-zeroclick')).toBe('dispatch');
+      spy.mockRestore();
+    });
   });
-});
 
-it('should reset when promise throw an exception', () => {
-  zeroclick.init({
-    await: () => {
-      throw new Error('exception');
-    }
-  });
+  it('should reset when promise throw an exception', () => {
+    zeroclick.init({
+      await: () => {
+        throw new Error('exception');
+      }
+    });
 
-  spy = jest.spyOn(zeroclick, '_reset');
-  html.link.dispatchEvent(html.mouseenterEvent);
+    spy = jest.spyOn(zeroclick, '_reset');
+    html.link.dispatchEvent(html.mouseenterEvent);
 
-  return zeroclick.props.current.promise.then(() => {
-    expect(spy).toHaveBeenCalledTimes(1);
-    spy.mockRestore();
+    return zeroclick.props.current.promise.then(() => {
+      expect(spy).toHaveBeenCalledTimes(1);
+      spy.mockRestore();
+    });
   });
 });
