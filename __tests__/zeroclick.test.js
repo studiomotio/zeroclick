@@ -125,7 +125,7 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
-  it('should do nothing on enter when navigating', () => {
+  it('should return on engage when navigating', () => {
     zeroclick.init({
       preventClick: false
     });
@@ -138,7 +138,7 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
-  it('should do nothing on cancel when navigating', () => {
+  it('should return on cancel when navigating', () => {
     zeroclick.init({
       preventClick: false
     });
