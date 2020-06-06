@@ -101,3 +101,15 @@ it('should use previous props on refresh', () => {
 
   expect(zeroclick.props.timeout).toBe(700);
 });
+
+it('should dispatch navigation when using a timeout promise', () => {
+  zeroclick.init();
+
+  spy = jest.spyOn(zeroclick, '_dispatch');
+  html.link.dispatchEvent(html.mouseenterEvent);
+
+  return zeroclick.props.current.promise.then(() => {
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(zeroclick._navigating).toBeTruthy();
+  });
+});
