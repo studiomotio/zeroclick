@@ -121,5 +121,6 @@ it('should dispatch navigation when using a timeout promise', () => {
   return zeroclick.props.current.promise.then(() => {
     expect(spy).toHaveBeenCalledTimes(1);
     expect(zeroclick._navigating).toBeTruthy();
+    spy.mockRestore();
   });
 });
