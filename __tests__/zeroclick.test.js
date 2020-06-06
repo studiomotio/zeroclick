@@ -51,6 +51,8 @@ describe('handle _nodelist event listeners', () => {
     html.link.dispatchEvent(html.mouseenterEvent);
 
     expect(spy).toHaveBeenCalledTimes(1);
+    expect(html.link.getAttribute('data-zeroclick')).toBe('engage');
+
     spy.mockRestore();
   });
 
@@ -61,6 +63,8 @@ describe('handle _nodelist event listeners', () => {
     html.link.dispatchEvent(html.mouseleaveEvent);
 
     expect(spy).toHaveBeenCalledTimes(1);
+    expect(html.link.getAttribute('data-zeroclick')).toBe('cancel');
+
     spy.mockRestore();
   });
 
@@ -71,6 +75,8 @@ describe('handle _nodelist event listeners', () => {
     html.link.dispatchEvent(html.clickEvent);
 
     expect(spy).toHaveBeenCalledTimes(1);
+    expect(html.link.getAttribute('data-zeroclick')).toBe('cancel');
+
     spy.mockRestore();
   });
 });
