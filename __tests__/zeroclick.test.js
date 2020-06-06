@@ -30,6 +30,14 @@ it('could have custom props that override defaults', () => {
   expect(zeroclick.props.timeout).toBe(700);
 });
 
+it('could have props.on set with a custom query selector', () => {
+  zeroclick.init({
+    on: document.querySelectorAll('a')
+  });
+
+  expect(zeroclick._nodelist.length).toBe(1);
+});
+
 it('should have _nodelist properly populated', () => {
   dom.clear();
 
