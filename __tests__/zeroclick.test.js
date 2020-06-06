@@ -149,6 +149,20 @@ describe('handle event listeners', () => {
     expect(spy).toHaveReturned();
     spy.mockRestore();
   });
+
+  it('should return when worker is undefined', () => {
+    zeroclick.init({
+      preventClick: false
+    });
+
+    zeroclick._worker = undefined;
+
+    spy = jest.spyOn(zeroclick, '_cancel');
+    html.link.dispatchEvent(html.clickEvent);
+
+    expect(spy).toHaveReturned();
+    spy.mockRestore();
+  });
 });
 
 describe('handle promises', () => {
