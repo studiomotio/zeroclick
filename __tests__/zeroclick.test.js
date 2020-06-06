@@ -77,7 +77,9 @@ describe('handle _nodelist event listeners', () => {
   });
 
   it('should listen to click', () => {
-    zeroclick.init();
+    zeroclick.init({
+      preventClick: false
+    });
 
     spy = jest.spyOn(zeroclick, '_click');
     html.link.dispatchEvent(html.clickEvent);
