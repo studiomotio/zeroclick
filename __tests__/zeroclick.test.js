@@ -141,3 +141,19 @@ it('should dispatch navigation when using a custom promise', () => {
     spy.mockRestore();
   });
 });
+
+it('should reset when promise throw an exception', () => {
+  zeroclick.init({
+    await: () => {
+      throw new Error('exception');
+    }
+  });
+
+  spy = jest.spyOn(zeroclick, '_reset');
+  html.link.dispatchEvent(html.mouseenterEvent);
+
+  return zeroclick.props.current.promise.then(() => {
+    expect(spy).toHaveBeenCalledTimes(1);
+    spy.mockRestore();
+  });
+});
