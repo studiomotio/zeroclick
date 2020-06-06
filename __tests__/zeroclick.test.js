@@ -112,6 +112,18 @@ describe('handle event listeners', () => {
     expect(spy).toHaveBeenCalledTimes(0);
     spy.mockRestore();
   });
+
+  it('should do nothing on click when preventClick is enable', () => {
+    zeroclick.init({
+      preventClick: true
+    });
+
+    spy = jest.spyOn(zeroclick, '_click');
+    html.link.dispatchEvent(html.clickEvent);
+
+    expect(spy).toHaveReturned();
+    spy.mockRestore();
+  });
 });
 
 describe('handle promises', () => {
