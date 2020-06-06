@@ -17,6 +17,7 @@ it('has defaults', () => {
   zeroclick.init();
 
   expect(zeroclick.props).toStrictEqual(defaults);
+  expect(zeroclick.props.await).toBeUndefined();
   expect(zeroclick._navigating).toBeFalsy();
   expect(zeroclick._worker).toBeUndefined();
 });
