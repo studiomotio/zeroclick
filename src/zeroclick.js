@@ -154,7 +154,7 @@ class ZeroClick {
     @param {MouseEvent} e - user click event
   */
   _click(e) {
-    if (e.isTrusted && this._props.preventClick) {
+    if (!this._navigating && this._props.preventClick) {
       e.preventDefault();
       e.stopPropagation();
 
