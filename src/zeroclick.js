@@ -63,7 +63,7 @@ class ZeroClick {
 
   /**
     Engage the link
-    @param {HTMLElement} target - element on which the mouseover event is engaged
+    @param {HTMLElement} target - element on which the mouseenter event is engaged
   */
   _engage(target) {
     if (this._navigating) {
