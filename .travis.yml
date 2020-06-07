@@ -1,0 +1,26 @@
+language: node_js
+
+node_js:
+  - 'node'
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - npm update
+
+install:
+  - npm install
+
+script:
+  - npm run build
+  - npm run coverage
+  - npm run coveralls
+
+notifications:
+  - email: false
