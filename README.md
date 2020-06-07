@@ -1,4 +1,4 @@
-# zeroclick – [![npm (scoped)](https://img.shields.io/npm/v/@studiomotio/zeroclick.svg)](https://www.npmjs.com/package/@studiomotio/zeroclick)
+# zeroclick – [![npm (scoped)](https://img.shields.io/npm/v/@studiomotio/zeroclick.svg)](https://www.npmjs.com/package/@studiomotio/zeroclick) [![code coverage](https://img.shields.io/coveralls/github/studiomotio/zeroclick)](https://coveralls.io/github/studiomotio/zeroclick)
 A **web concept** for a zero click user experience.
 
 [![zeroclick](logo.svg "Discover the experiment")](https://studiomotio.github.io/zeroclick)
