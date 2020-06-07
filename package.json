@@ -13,7 +13,7 @@
     "build": "microbundle --no-sourcemap",
     "test": "jest",
     "coverage": "jest --coverage",
-    "coveralls": "cat ./__tests__/coverage/lcov.info | coveralls"
+    "coveralls": "coveralls < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
