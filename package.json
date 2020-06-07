@@ -12,7 +12,8 @@
     "dev": "webpack --config webpack.dev.js --progress",
     "build": "microbundle --no-sourcemap",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "coveralls": "cat ./__tests__/coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
