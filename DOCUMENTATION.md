@@ -67,26 +67,52 @@ Then init zeroclick:
 Zeroclick is build upon `microbundle` and is provided with an **ESM** and **Modern** version include in the package `dist` folder.
 
 ## Properties
-### API
-Instacam reference that details all properties of the class.
+API reference that describe plugin properties.
 
-#### on
-Type: `NodeList`
+### on
+Type: `String` | `NodeList`
 Default: `a`
 
-...
+Define **on which elements** the plugin is applied. If you provide a `String`, it will automatically use `querySelectorAll` to create a `NodeList`.
 
-#### timeout
+```js
+zeroclick.init({
+  on: document.querySelector('a.zeroclick')
+});
+```
+
+### timeout
 Type: `Number`
 Default: `600`
 
-...
+The **time before the `click` event is dispatched** on the hovered link. When using a custom `Promise` through [`await`](#await), this property will be ignored.
 
-#### await
+```js
+zeroclick.init({
+  timeout: 700
+});
+```
+
+### await
 Type: `Promise`
 Default: `undefined`
 
-...
+Define a **custom `Promise` that need to be resolved** in order to dispatch the link `click` event, or cancel it if the `Promise` is rejected. This allow you to do some cool stuff before going to the next page: like playing an animation, fetch some content, etc..
+
+```js
+zeroclick.init({
+  await: (resolve, reject) => {
+    new customAnimation({
+      onComplete: () => {
+        resolve();
+      },
+      onFailure: () => {
+        reject();
+      }
+    });
+  }
+});
+```
 
 ## Methods
 ...
