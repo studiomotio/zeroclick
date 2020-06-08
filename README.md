@@ -1,7 +1,7 @@
 # zeroclick – [![npm (scoped)](https://img.shields.io/npm/v/@studiomotio/zeroclick.svg)](https://www.npmjs.com/package/@studiomotio/zeroclick) [![travis ci](https://img.shields.io/travis/studiomotio/zeroclick)](https://travis-ci.org/github/studiomotio/zeroclick) [![code coverage](https://img.shields.io/coveralls/github/studiomotio/zeroclick)](https://coveralls.io/github/studiomotio/zeroclick)
 A **web concept** for a zero click user experience.
 
-[![zeroclick](logo.svg "Discover the experiment")](https://studiomotio.github.io/zeroclick)
+[![zeroclick](logo.svg "Discover the experiment")](https://zeroclick.js.org/)
 
 ## Intro
 This plugin is a **web concept for a zero click user experience**, meaning that the user doesn't need to click any links to properly navigate between your website's pages.
