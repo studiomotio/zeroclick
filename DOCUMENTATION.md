@@ -115,12 +115,12 @@ zeroclick.init({
 ```
 
 ## Methods
-...
+API reference that describe plugin methods.
 
-#### init (options)
+### init(options)
 Type: `Function`
 
-...
+The **main method that initialize the plugin**, with or without custom options. This make zeroclick up and running on elements you provide in the [`on`](#on) property.
 
 ```js
 zeroclick.init({
@@ -128,22 +128,22 @@ zeroclick.init({
 });
 ```
 
-#### destroy ()
+### refresh()
 Type: `Function`
 
-...
-
-```js
-zeroclick.destroy();
-```
-
-#### refresh ()
-Type: `Function`
-
-...
+Refresh the internal `NodeList` in order to **add new eligible links from the DOM**, this is useful when your site is running like a SPA _(Single Page Application)_, with Vue, React, etc..
 
 ```js
 zeroclick.refresh();
+```
+
+### destroy()
+Type: `Function`
+
+This **remove all event listeners** from eligible links, making the plugin inactive.
+
+```js
+zeroclick.destroy();
 ```
 
 ## Events
