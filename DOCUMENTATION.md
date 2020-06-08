@@ -9,7 +9,9 @@ Here you will find the documentation describing how to use `zeroclick`.
 5. [Events](#events)
 
 ## How it works
-The package avoid users from clicking on links by creating a fake user `click` event through `MouseEvent` API. The default event is prevented and called lately, when the `timeout` time has elapsed or your custom `Promise` resolved.
+The plugin **simulate a user `click` event** through the `MouseEvent` API. The default event is prevented and called lately, when the [`timeout`](#timeout) time has elapsed or your [custom `Promise`](#await) resolved.
+
+> Be sure to read the [disclaimer notice](README.md#disclaimer).
 
 ## Install
 Want to try zeroclick? Let’s install it!
@@ -73,7 +75,7 @@ API reference that describe plugin properties.
 Type: `String` | `NodeList`
 Default: `a`
 
-Define **on which elements** the plugin is applied. If you provide a `String`, it will automatically use `querySelectorAll` to create a `NodeList`.
+Define **on which elements** the plugin is applied.
 
 ```js
 zeroclick.init({
@@ -81,17 +83,27 @@ zeroclick.init({
 });
 ```
 
+> If you provide a `String`, it will automatically use `querySelectorAll` to create a `NodeList`.
+
 ### timeout
 Type: `Number`
 Default: `600`
 
-The **time before the `click` event is dispatched** on the hovered link. When using a custom `Promise` through [`await`](#await), this property will be ignored.
+The **time before the `click` event is dispatched** on the hovered link.
 
 ```js
 zeroclick.init({
   timeout: 700
 });
 ```
+
+> When using a custom `Promise` through [`await`](#await), this property will be ignored.
+
+### preventClick
+Type: `Boolean`
+Default: `true`
+
+Prevent the user to click on eligible links: this allow a **full "zero click" experience**.
 
 ### await
 Type: `Promise`
