@@ -1,11 +1,11 @@
 :root {
   --base-color: #2b3138;
-  --vibrant-color: #4654f2;
+  --vibrant-color: #2443DB;
 }
 
 @font-face {
   font-family: 'Circular Std Book';
-  src: local('Circular Std Book'), local('CircularStd-Book'), url('CircularStd-Book.woff') format('woff');
+  src: local('Circular Std Book'), local('CircularStd-Book'), url('font/CircularStd-Book.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: 'Circular Std Book';
-  src: local('Circular Std Bold'), local('CircularStd-Bold'), url('CircularStd-Bold.woff') format('woff');
+  src: local('Circular Std Bold'), local('CircularStd-Bold'), url('font/CircularStd-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -74,19 +74,19 @@ p a:hover::before {
 h1 {
   display: inline-flex;
   align-items: center;
-  color: var(--vibrant-color);
-  font-weight: 400;
-}
-
-.invert {
-  margin: 0 5px;
-  padding: 0 10px;
-  background: var(--vibrant-color);
-  color: #fff;
+  margin: 20px 0;
 }
 
 [data-zeroclick='dispatch'] {
   color: var(--base-color);
+}
+
+.title {
+  height: 100px;
+}
+
+.github-star {
+  height: 30px;
 }
 
 .github-button {
@@ -94,10 +94,6 @@ h1 {
   margin-left: 20px;
   opacity: 0;
   animation: github-star 1.5s 500ms ease forwards;
-}
-
-.github-star {
-  height: 30px;
 }
 
 .github-button:hover {
@@ -122,6 +118,7 @@ h1 {
 @media (max-width: 640px) {
   body {
     justify-content: flex-start;
+    text-align: center;
     font-size: 30px;
   }
 
@@ -130,11 +127,20 @@ h1 {
   }
 
   h1 {
-    font-size: 12vw;
+    flex-direction: column;
   }
 
   a::before {
     height: 2px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .title {
+    height: 70px;
+    margin: 40px 0;
   }
 }
 
