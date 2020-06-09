@@ -1,12 +1,17 @@
 'use strict';
 
 const path = require('path');
-const merge = require('webpack-merge');
 
-module.exports = () => merge(require('./webpack.common.js')(), {
+module.exports = () => ({
   mode: 'development',
+  entry: './src/zeroclick.js',
   output: {
-    filename: 'zeroclick.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'zeroclick.js',
+    library: 'zeroclick',
+    libraryExport: 'default',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   devServer: {
     contentBase: [
