@@ -23,5 +23,5 @@ script.onload = () => {
 };
 
 // load the appropriate library (based on environment)
-script.src = window.location.port === '9000' ? 'zeroclick.js' : 'https://unpkg.com/zeroclick';
+script.src = window.location.port === '9000' ? 'zeroclick.js' : 'https://unpkg.com/@studiomotio/zeroclick';
 document.querySelector('body').appendChild(script);
