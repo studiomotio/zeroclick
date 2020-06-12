@@ -1,0 +1,37 @@
+# Github workflow for Continuous Integration
+
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'src/**'
+
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'src/**'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the package
+        run: npm run build
+
+      - name: Run tests with code coverage
+        run: npm run coverage
+
+      - name: Send code coverage to Coveralls
+        run: npm run coveralls
