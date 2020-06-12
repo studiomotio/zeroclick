@@ -78,6 +78,7 @@ class ZeroClick {
     target.dispatchEvent(new CustomEvent('engage'));
     target.setAttribute('data-zeroclick', 'engage');
 
+    // create the Promise based on library settings
     this._props.current = {
       target: target,
       promise: new Promise((resolve, reject) => {
@@ -128,14 +129,17 @@ class ZeroClick {
       return;
     }
 
+    // cancel nothing if no work exists
     if (typeof this._worker === 'undefined') {
       return;
     }
 
+    // cancel the Promise if the worker is a function
     if (typeof this._worker === 'function') {
       this._worker('cancel');
     }
 
+    // cancel the timeout if the worker is a number
     if (typeof this._worker === 'number') {
       clearTimeout(this._worker);
     }
