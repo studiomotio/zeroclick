@@ -34,4 +34,6 @@ jobs:
         run: npm run coverage
 
       - name: Send code coverage to Coveralls
-        run: npm run coveralls
+        uses: coverallsapp/github-action@v1.1.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
