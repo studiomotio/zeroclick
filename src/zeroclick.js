@@ -70,6 +70,7 @@ class ZeroClick {
       return;
     }
 
+    // call the appropriate callback
     this._props.onEngage({
       target: target,
       url: target.href
@@ -103,6 +104,7 @@ class ZeroClick {
   _dispatch(target) {
     this._navigating = true;
 
+    // call the appropriate callback
     this._props.onDispatch({
       target: target,
       url: target.href
@@ -111,6 +113,7 @@ class ZeroClick {
     target.dispatchEvent(new CustomEvent('dispatch'));
     target.setAttribute('data-zeroclick', 'dispatch');
 
+    // create the "untrusted" MouseEvent in order to simulate a user "click"
     target.dispatchEvent(new MouseEvent('click', {
       view: window,
       bubbles: true,
@@ -144,6 +147,7 @@ class ZeroClick {
       clearTimeout(this._worker);
     }
 
+    // call the appropriate callback
     this._props.onCancel({
       target: target,
       url: target.href
