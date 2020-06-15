@@ -58,7 +58,7 @@ Then init zeroclick:
 <script>
   zeroclick.init({
     // ...
-  })
+  });
 </script>
 ```
 
@@ -125,6 +125,8 @@ zeroclick.init({
   }
 });
 ```
+
+> Note that rejecting the `Promise` will prevent `onCancel` event to be called.
 
 ## Methods
 API reference that describe plugin methods.
