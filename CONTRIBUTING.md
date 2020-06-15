@@ -1,8 +1,8 @@
-# Contributing to Micro motion
+# Contributing to zeroclick
 
 First of all, thank for taking time to contribute!
 
-The following is a set of guidelines for contributing to Micro motion. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to zeroclick. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 
 #### Table Of Contents
@@ -14,18 +14,18 @@ The following is a set of guidelines for contributing to Micro motion. These are
 
 ## Code of conduct
 
-This project and everyone participating in it is governed by the [Micro motion code of conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [hello@studiomotio.com](mailto:hello@studiomotio.com).
+This project and everyone participating in it is governed by the [zeroclick code of conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [hello@studiomotio.com](mailto:hello@studiomotio.com).
 
 
 ## Reporting bugs
 
-This section guides you through submitting a bug report for Micro motion. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
+This section guides you through submitting a bug report for zeroclick. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
 
-Before creating bug reports, please check the [issues list](https://github.com/studiomotio/micro-motion/issues) as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible.
+Before creating bug reports, please check the [issues list](https://github.com/studiomotio/zeroclick/issues) as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible.
 
 ### Before submitting a bug report
 
-* **Perform a [cursory search](https://github.com/studiomotio/micro-motion/issues)** to see if the problem has already been reported. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one.
+* **Perform a [cursory search](https://github.com/studiomotio/zeroclick/issues)** to see if the problem has already been reported. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one.
 
 ### How do I submit a (good) bug report?
 
@@ -37,17 +37,17 @@ Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues). 
 * Explain the problem and **include additional details** to help maintainers reproduce the problem
 * Include details about your **configuration and environment**
 * Include screenshots and animated GIFs if needed
-* Specify which version of Micro motion you're using
+* Specify which version of zeroclick you're using
 
 
 ## Suggesting enhancements
 
-This section guides you through submitting an enhancement suggestion for Micro motion, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion and find related suggestions.
+This section guides you through submitting an enhancement suggestion for zeroclick, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion and find related suggestions.
 
 * Use a **clear and descriptive title** for the issue to identify the suggestion
 * Provide a **step-by-step description of the suggested enhancement** in as many details as possible
 * Describe the current behavior and explain **which behavior you expected to see** instead and why
-* Explain **why this enhancement would be useful** to most Micro motion users
+* Explain **why this enhancement would be useful** to most zeroclick users
 * List some other applications **where this enhancement exists**
 
 Don't hesitate to use pull requests to propose code changes.

@@ -9,7 +9,7 @@ Here you will find the documentation describing how to use `zeroclick`.
 5. [Events](#events)
 
 ## How it works
-The plugin **simulate a user `click` event** through the `MouseEvent` API. The default event is prevented and called lately, when the [`timeout`](#timeout) time has elapsed or your [custom `Promise`](#await) resolved.
+This plugin **simulate a user `click`** through the `MouseEvent` API: the default event is prevented and called later, when the [`timeout`](#timeout) time has elapsed or your [custom `Promise`](#await) resolved.
 
 > Be sure to read the [disclaimer notice](README.md#disclaimer).
 
