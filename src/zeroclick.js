@@ -128,12 +128,9 @@ class ZeroClick {
     @param {HTMLElement} target - element on which the click event is canceled
   */
   _cancel(target) {
-    if (this._navigating) {
-      return;
-    }
 
-    // cancel nothing if no work exists
-    if (typeof this._worker === 'undefined') {
+    // exit if navigation is engaged or no worker exists
+    if (this._navigating || typeof this._worker === 'undefined') {
       return;
     }
 
