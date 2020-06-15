@@ -3,12 +3,10 @@
 let script = document.createElement('script');
 
 script.onload = () => {
-  let options = {
-    on: 'a:not(.github-button)'
-  };
-
   barba.hooks.once(() => {
-    zeroclick.init(options);
+    zeroclick.init({
+      on: 'a:not(.github-button)'
+    });
   });
 
   barba.hooks.enter(() => {
