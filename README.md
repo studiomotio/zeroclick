@@ -1,4 +1,4 @@
-# zeroclick – [![npm (scoped)](https://img.shields.io/npm/v/@studiomotio/zeroclick.svg)](https://www.npmjs.com/package/@studiomotio/zeroclick) [![ci](https://img.shields.io/github/workflow/status/studiomotio/zeroclick/CI)](https://github.com/studiomotio/zeroclick/actions?query=workflow:"CI") [![code coverage](https://img.shields.io/coveralls/github/studiomotio/zeroclick)](https://coveralls.io/github/studiomotio/zeroclick)
+# zeroclick – [![npm (scoped)](https://img.shields.io/npm/v/@studiomotio/zeroclick.svg)](https://www.npmjs.com/package/@studiomotio/zeroclick) [![npm](https://img.shields.io/bundlephobia/min/studiomotio/zeroclick?label=size)](https://bundlephobia.com/result?p=@studiomotio/zeroclick) [![ci](https://img.shields.io/github/workflow/status/studiomotio/zeroclick/CI)](https://github.com/studiomotio/zeroclick/actions?query=workflow:"CI") [![code coverage](https://img.shields.io/coveralls/github/studiomotio/zeroclick)](https://coveralls.io/github/studiomotio/zeroclick)
 A **web concept** for a zero click user experience.
 
 [![zeroclick](logo.svg "Discover the experiment")](https://zeroclick.js.org/)
