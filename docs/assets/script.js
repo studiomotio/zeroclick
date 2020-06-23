@@ -16,7 +16,11 @@ script.onload = () => {
   barba.use(barbaCss);
 
   barba.init({
-    preventRunning: true
+    preventRunning: true,
+    transitions: [{
+      once() {},
+      enter() {}
+    }]
   });
 };
 
