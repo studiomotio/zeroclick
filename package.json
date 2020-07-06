@@ -1,6 +1,6 @@
 {
   "name": "@studiomotio/zeroclick",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "A web concept for a zero click user experience",
   "source": "src/zeroclick.js",
   "main": "dist/zeroclick.umd.js",
