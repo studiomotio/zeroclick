@@ -1,6 +1,6 @@
 {
   "name": "@studiomotio/zeroclick",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A web concept for a zero click user experience",
   "source": "src/zeroclick.js",
   "main": "dist/zeroclick.umd.js",
@@ -40,13 +40,13 @@
   },
   "homepage": "https://github.com/studiomotio/zeroclick#readme",
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
-    "babel-jest": "^26.0.1",
-    "jest": "^26.0.1",
-    "microbundle": "^0.12.0",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "babel-jest": "^26.1.0",
+    "jest": "^26.1.0",
+    "microbundle": "^0.12.2",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.10.3"
   }
 }
