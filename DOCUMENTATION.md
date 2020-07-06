@@ -105,6 +105,8 @@ Default: `true`
 
 Prevent the user to click on eligible links: this allow a **full "zero click" experience**.
 
+> Note that when the keyboard `Enter` key is pressed, the browser call the link `click` event, using a `MouseEvent` instead of a `KeyboardEvent`, which make the event source difficult to detect. This behavior is managed by the plugin using the `keydown` event and allow you to prevent the user mouse click through `preventClick` without blocking keyboard usage, needed to maintain page accessibility.
+
 ### await
 Type: `Promise`
 Default: `undefined`
