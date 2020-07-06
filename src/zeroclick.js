@@ -33,12 +33,16 @@ class ZeroClick {
         },
         click: (e) => {
           this._click(e);
+        },
+        keydown: (e) => {
+          this._keydown(e);
         }
       };
 
       target.addEventListener('mouseenter', target.handler.engage);
       target.addEventListener('mouseleave', target.handler.cancel);
       target.addEventListener('click', target.handler.click);
+      target.addEventListener('keydown', target.handler.keydown);
     });
   }
 
@@ -50,6 +54,7 @@ class ZeroClick {
       target.removeEventListener('mouseenter', target.handler.engage);
       target.removeEventListener('mouseleave', target.handler.cancel);
       target.removeEventListener('click', target.handler.click);
+      target.removeEventListener('keydown', target.handler.keydown);
     });
   }
 
@@ -169,6 +174,16 @@ class ZeroClick {
     // clicking on a link is considered as cancelling the process
     this._cancel(e.target);
     this._navigating = true;
+  }
+
+  /**
+    Manage the user keydown event
+    @param {KeyboardEvent} e - user keyboard event
+  */
+  _keydown(e) {
+    if (e.key === 'Enter') {
+      this._navigating = true;
+    }
   }
 
   /**
