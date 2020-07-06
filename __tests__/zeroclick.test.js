@@ -102,6 +102,18 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
+  it ('should listen to `Enter` key', () => {
+    zeroclick.init();
+
+    spy = jest.spyOn(zeroclick, '_keydown');
+    html.link.dispatchEvent(html.keydownEnterEvent);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(zeroclick._navigating).toBeTruthy();
+
+    spy.mockRestore();
+  });
+
   it('should remove event listeners on destroy', () => {
     zeroclick.init();
     zeroclick.destroy();
