@@ -191,7 +191,7 @@ zeroclick.init({
 });
 ```
 
-#### Data attributes
+### Data attributes
 In addition, the plugin provide a bunch of `data-attributes`, to easily add custom styles/scripts in your application.
 
 - `data-zeroclick="engage"`  
