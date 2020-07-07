@@ -68,7 +68,7 @@ describe('handle event listeners', () => {
     zeroclick.init();
 
     spy = jest.spyOn(zeroclick, '_engage');
-    html.link.dispatchEvent(html.mouseenterEvent);
+    html.link.dispatchEvent(html.event.mouse.enter);
 
     expect(spy).toHaveBeenCalledTimes(1);
     expect(html.link.getAttribute('data-zeroclick')).toBe('engage');
@@ -80,7 +80,7 @@ describe('handle event listeners', () => {
     zeroclick.init();
 
     spy = jest.spyOn(zeroclick, '_cancel');
-    html.link.dispatchEvent(html.mouseleaveEvent);
+    html.link.dispatchEvent(html.event.mouse.leave);
 
     expect(spy).toHaveBeenCalledTimes(1);
     expect(html.link.getAttribute('data-zeroclick')).toBe('cancel');
@@ -94,10 +94,22 @@ describe('handle event listeners', () => {
     });
 
     spy = jest.spyOn(zeroclick, '_click');
-    html.link.dispatchEvent(html.clickEvent);
+    html.link.dispatchEvent(html.event.mouse.click);
 
     expect(spy).toHaveBeenCalledTimes(1);
     expect(html.link.getAttribute('data-zeroclick')).toBe('cancel');
+
+    spy.mockRestore();
+  });
+
+  it ('should listen to `Enter` key', () => {
+    zeroclick.init();
+
+    spy = jest.spyOn(zeroclick, '_keydown');
+    html.link.dispatchEvent(html.event.keyboard.enter);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(zeroclick._navigating).toBeTruthy();
 
     spy.mockRestore();
   });
@@ -107,7 +119,7 @@ describe('handle event listeners', () => {
     zeroclick.destroy();
 
     spy = jest.spyOn(zeroclick, '_engage');
-    html.link.dispatchEvent(html.mouseenterEvent);
+    html.link.dispatchEvent(html.event.mouse.enter);
 
     expect(spy).toHaveBeenCalledTimes(0);
     spy.mockRestore();
@@ -119,7 +131,7 @@ describe('handle event listeners', () => {
     });
 
     spy = jest.spyOn(zeroclick, '_click');
-    html.link.dispatchEvent(html.clickEvent);
+    html.link.dispatchEvent(html.event.mouse.click);
 
     expect(spy).toHaveReturned();
     spy.mockRestore();
@@ -130,9 +142,9 @@ describe('handle event listeners', () => {
       preventClick: false
     });
 
-    html.link.dispatchEvent(html.clickEvent);
+    html.link.dispatchEvent(html.event.mouse.click);
     spy = jest.spyOn(zeroclick, '_engage');
-    html.link.dispatchEvent(html.mouseenterEvent);
+    html.link.dispatchEvent(html.event.mouse.enter);
 
     expect(spy).toHaveReturned();
     spy.mockRestore();
@@ -144,7 +156,7 @@ describe('handle event listeners', () => {
     });
 
     spy = jest.spyOn(zeroclick, '_cancel');
-    html.link.dispatchEvent(html.clickEvent);
+    html.link.dispatchEvent(html.event.mouse.click);
 
     expect(spy).toHaveReturned();
     spy.mockRestore();
@@ -158,7 +170,7 @@ describe('handle event listeners', () => {
     zeroclick._worker = undefined;
 
     spy = jest.spyOn(zeroclick, '_cancel');
-    html.link.dispatchEvent(html.clickEvent);
+    html.link.dispatchEvent(html.event.mouse.click);
 
     expect(spy).toHaveReturned();
     spy.mockRestore();
@@ -170,7 +182,7 @@ describe('handle promises', () => {
     zeroclick.init();
 
     spy = jest.spyOn(zeroclick, '_dispatch');
-    html.link.dispatchEvent(html.mouseenterEvent);
+    html.link.dispatchEvent(html.event.mouse.enter);
 
     return zeroclick.props.current.promise.then(() => {
       expect(spy).toHaveBeenCalledTimes(1);
@@ -188,7 +200,7 @@ describe('handle promises', () => {
     });
 
     spy = jest.spyOn(zeroclick, '_dispatch');
-    html.link.dispatchEvent(html.mouseenterEvent);
+    html.link.dispatchEvent(html.event.mouse.enter);
 
     return zeroclick.props.current.promise.then(() => {
       expect(spy).toHaveBeenCalledTimes(1);
@@ -206,7 +218,7 @@ describe('handle promises', () => {
     });
 
     spy = jest.spyOn(zeroclick, '_reset');
-    html.link.dispatchEvent(html.mouseenterEvent);
+    html.link.dispatchEvent(html.event.mouse.enter);
 
     return zeroclick.props.current.promise.then(() => {
       expect(spy).toHaveBeenCalledTimes(1);
@@ -221,9 +233,9 @@ describe('handle promises', () => {
       }
     });
 
-    html.link.dispatchEvent(html.mouseenterEvent);
+    html.link.dispatchEvent(html.event.mouse.enter);
     spy = jest.spyOn(zeroclick, '_worker');
-    html.link.dispatchEvent(html.mouseleaveEvent);
+    html.link.dispatchEvent(html.event.mouse.leave);
 
     return zeroclick.props.current.promise.then(() => {
       expect(spy).toHaveBeenCalledTimes(1);
