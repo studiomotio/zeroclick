@@ -181,6 +181,8 @@ class ZeroClick {
     @param {KeyboardEvent} e - user keyboard event
   */
   _keydown(e) {
+
+    // istanbul ignore else
     if (e.key === 'Enter') {
       this._navigating = true;
     }
