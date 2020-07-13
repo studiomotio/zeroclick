@@ -9,6 +9,7 @@
   "module": "dist/zeroclick.mjs",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js",
+    "docs": "webpack --config webpack.docs.js",
     "build": "microbundle --no-sourcemap",
     "test": "jest",
     "coverage": "jest --coverage"
