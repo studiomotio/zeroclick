@@ -46,6 +46,7 @@
     "@barba/core": "^2.9.7",
     "@barba/css": "^2.1.15",
     "babel-jest": "^26.1.0",
+    "babel-loader": "^8.1.0",
     "jest": "^26.1.0",
     "microbundle": "^0.12.2",
     "webpack": "^4.43.0",
