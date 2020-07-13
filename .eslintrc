@@ -6,11 +6,6 @@
     "jest": true
   },
   "extends": "eslint:recommended",
-  "globals": {
-    "zeroclick": false,
-    "barba": false,
-    "barbaCss": false
-  },
   "parserOptions": {
     "ecmaVersion": 9,
     "sourceType": "module"
