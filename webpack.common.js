@@ -15,5 +15,12 @@ module.exports = () => ({
     alias: {
       source: path.resolve(__dirname, 'src')
     }
+  },
+  module: {
+    rules: [{
+      test: /\.js$/,
+      use: 'babel-loader',
+      exclude: /node_modules/
+    }]
   }
 });
