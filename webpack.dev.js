@@ -4,14 +4,18 @@ const path = require('path');
 
 module.exports = () => ({
   mode: 'development',
-  entry: './src/zeroclick.js',
+  entry: [
+    './src/zeroclick.js',
+    './docs/src/index.js'
+  ],
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'zeroclick.js',
-    library: 'zeroclick',
-    libraryExport: 'default',
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    path: path.resolve(__dirname, 'docs'),
+    filename: 'assets/app.js'
+  },
+  resolve: {
+    alias: {
+      package: path.resolve(__dirname, 'src')
+    }
   },
   devServer: {
     contentBase: [
