@@ -1,6 +1,6 @@
 'use strict';
 
-import zeroclick from 'package/zeroclick.js';
+import zeroclick from 'source/zeroclick.js';
 import barba from '@barba/core';
 import barbaCss from '@barba/css';
 
