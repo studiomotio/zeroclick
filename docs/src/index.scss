@@ -1,11 +1,9 @@
-:root {
-  --base-color: #2b3138;
-  --vibrant-color: #2443db;
-}
+$base-color: #2b3138;
+$vibrant-color: #2443db;
 
 @font-face {
   font-family: 'Circular Std Book';
-  src: local('Circular Std Book'), local('CircularStd-Book'), url('font/CircularStd-Book.woff') format('woff');
+  src: local('Circular Std Book'), local('CircularStd-Book'), url('../assets/font/CircularStd-Book.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -13,7 +11,7 @@
 
 @font-face {
   font-family: 'Circular Std Book';
-  src: local('Circular Std Bold'), local('CircularStd-Bold'), url('font/CircularStd-Bold.woff') format('woff');
+  src: local('Circular Std Bold'), local('CircularStd-Bold'), url('../assets/font/CircularStd-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -40,7 +38,7 @@ body {
   font-family: 'Circular Std Book', Arial;
   font-size: 40px;
   background: #fff;
-  color: var(--base-color);
+  color: $base-color;
   user-select: none;
 }
 
@@ -50,25 +48,29 @@ main {
   padding: 0 40px;
 }
 
-p a {
-  position: relative;
-  color: var(--vibrant-color);
-  text-decoration: none;
-}
+p {
+  a {
+    position: relative;
+    color: $vibrant-color;
+    text-decoration: none;
 
-p a::before {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 4px;
-  bottom: -5px;
-  left: 0;
-  background: currentColor;
-}
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 4px;
+      bottom: -5px;
+      left: 0;
+      background: currentColor;
+    }
 
-p a:hover::before {
-  width: 100%;
-  transition: width 400ms ease;
+    &:hover {
+      &::before {
+        width: 100%;
+        transition: width 400ms ease;
+      }
+    }
+  }
 }
 
 h1 {
@@ -78,7 +80,7 @@ h1 {
 }
 
 [data-zeroclick='dispatch'] {
-  color: var(--base-color);
+  color: $base-color;
 }
 
 .title {
@@ -130,8 +132,10 @@ h1 {
     flex-direction: column;
   }
 
-  a::before {
-    height: 2px;
+  a {
+    &::before {
+      height: 2px;
+    }
   }
 
   img {
