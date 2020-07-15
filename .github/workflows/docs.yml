@@ -1,0 +1,28 @@
+# Github workflow to build and deploy the documentation bundle
+
+name: Documentation
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'docs/src/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+
+      - name: Build docs bundle
+        run: npm run docs
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v4
+        with:
+          add: "docs/assets"
+          message: "Deploy docs"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
