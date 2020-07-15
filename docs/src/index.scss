@@ -2,16 +2,16 @@ $base-color: #2b3138;
 $vibrant-color: #2443db;
 
 @font-face {
-  font-family: 'Circular Std Book';
-  src: local('Circular Std Book'), local('CircularStd-Book'), url('../assets/font/CircularStd-Book.woff') format('woff');
+  font-family: 'Sailec';
+  src: local('Sailec'), url('../assets/font/Sailec.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Circular Std Book';
-  src: local('Circular Std Bold'), local('CircularStd-Bold'), url('../assets/font/CircularStd-Bold.woff') format('woff');
+  font-family: 'Sailec';
+  src: local('Sailec-Bold'), url('../assets/font/Sailec-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -35,8 +35,8 @@ body {
   width: 100vw;
   min-height: 100vh;
   margin: 0;
-  font-family: 'Circular Std Book', Arial;
-  font-size: 40px;
+  font-family: 'Sailec', Arial, sans-serif;
+  font-size: 38px;
   background: #fff;
   color: $base-color;
   user-select: none;
