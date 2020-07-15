@@ -96,10 +96,10 @@ h1 {
   margin-left: 20px;
   opacity: 0;
   animation: github-star 1.5s 500ms ease forwards;
-}
 
-.github-button:hover {
-  opacity: 0.5;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .barba-leave,
