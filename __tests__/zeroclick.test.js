@@ -194,7 +194,7 @@ describe('handle promises', () => {
 
   it('should dispatch navigation when using a custom promise', () => {
     zeroclick.init({
-      await: (resolve) => {
+      await(resolve) {
         resolve();
       }
     });
@@ -212,7 +212,7 @@ describe('handle promises', () => {
 
   it('should reset when promise throw an exception', () => {
     zeroclick.init({
-      await: () => {
+      await() {
         throw new Error('exception');
       }
     });
@@ -228,7 +228,7 @@ describe('handle promises', () => {
 
   it('should reject promise on cancel', () => {
     zeroclick.init({
-      await: (resolve, reject) => {
+      await(resolve, reject) {
         reject();
       }
     });
