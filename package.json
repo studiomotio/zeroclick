@@ -54,7 +54,7 @@
     "autoprefixer": "^9.8.5",
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
-    "css-loader": "^3.6.0",
+    "css-loader": "^4.0.0",
     "file-loader": "^6.0.0",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
