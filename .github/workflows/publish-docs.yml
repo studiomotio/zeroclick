@@ -1,6 +1,6 @@
-# Github workflow to build and deploy the documentation bundle
+# Github workflow to publish the documentation to Github Pages
 
-name: Documentation
+name: Publish docs
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
       - master
     paths:
       - 'docs/src/**'
+      - 'src/**'
 
 jobs:
   deploy:
