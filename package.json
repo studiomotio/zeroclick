@@ -8,7 +8,7 @@
   "unpkg": "dist/zeroclick.umd.js",
   "module": "dist/zeroclick.mjs",
   "scripts": {
-    "lint": "eslint **/*.js && stylelint docs/src/**/*.scss",
+    "lint": "eslint \"**/*.js\" && stylelint \"docs/src/**/*.scss\"",
     "dev": "webpack-dev-server --config webpack.dev.js",
     "docs": "webpack --config webpack.docs.js",
     "build": "microbundle --no-sourcemap",
