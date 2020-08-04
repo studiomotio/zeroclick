@@ -3,7 +3,7 @@
   "version": "1.0.4",
   "description": "A web concept for a zero click user experience",
   "source": "src/zeroclick.js",
-  "main": "dist/zeroclick.umd.js",
+  "main": "dist/zeroclick.js",
   "browser": "dist/zeroclick.umd.js",
   "unpkg": "dist/zeroclick.umd.js",
   "module": "dist/zeroclick.mjs",
