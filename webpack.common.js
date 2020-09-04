@@ -1,5 +1,3 @@
-'use strict';
-
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -8,16 +6,16 @@ module.exports = () => ({
   entry: [
     './src/zeroclick.js',
     './docs/src/index.js',
-    './docs/src/index.scss'
+    './docs/src/index.scss',
   ],
   output: {
     path: path.resolve(__dirname, 'docs'),
-    filename: 'assets/app.js'
+    filename: 'assets/app.js',
   },
   resolve: {
     alias: {
-      source: path.resolve(__dirname, 'src')
-    }
+      source: path.resolve(__dirname, 'src'),
+    },
   },
   module: {
     rules: [{
@@ -26,34 +24,34 @@ module.exports = () => ({
         loader: 'file-loader',
         options: {
           name: '[folder]/[name].[ext]',
-          emitFile: false
-        }
-      }
+          emitFile: false,
+        },
+      },
     }, {
       test: /\.scss$/,
       use: [{
-        loader: MiniCssExtractPlugin.loader
+        loader: MiniCssExtractPlugin.loader,
       }, {
-        loader: 'css-loader'
+        loader: 'css-loader',
       }, {
         loader: 'postcss-loader',
         options: {
           plugins: () => [
-            autoprefixer()
-          ]
-        }
+            autoprefixer(),
+          ],
+        },
       }, {
-        loader: 'sass-loader'
-      }]
+        loader: 'sass-loader',
+      }],
     }, {
       test: /\.js$/,
       use: 'babel-loader',
-      exclude: /node_modules/
-    }]
+      exclude: /node_modules/,
+    }],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/app.css'
-    })
-  ]
+      filename: 'assets/app.css',
+    }),
+  ],
 });

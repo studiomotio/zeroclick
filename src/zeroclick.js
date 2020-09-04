@@ -1,5 +1,3 @@
-'use strict';
-
 import defaults from './defaults.js';
 
 class ZeroClick {
@@ -13,7 +11,7 @@ class ZeroClick {
     // assign custom user properties to defaults
     this._props = {
       ...defaults,
-      ...properties
+      ...properties,
     };
 
     // init global navigation state
@@ -36,7 +34,7 @@ class ZeroClick {
         },
         keydown: (e) => {
           this._keydown(e);
-        }
+        },
       };
 
       target.addEventListener('mouseenter', target.handler.engage);
@@ -78,7 +76,7 @@ class ZeroClick {
     // call the appropriate callback
     this._props.onEngage({
       target: target,
-      url: target.href
+      url: target.href,
     });
 
     target.dispatchEvent(new CustomEvent('engage'));
@@ -98,7 +96,7 @@ class ZeroClick {
         this._dispatch(target);
       }).catch(() => {
         this._reset();
-      })
+      }),
     };
   }
 
@@ -112,7 +110,7 @@ class ZeroClick {
     // call the appropriate callback
     this._props.onDispatch({
       target: target,
-      url: target.href
+      url: target.href,
     });
 
     target.dispatchEvent(new CustomEvent('dispatch'));
@@ -122,7 +120,7 @@ class ZeroClick {
     target.dispatchEvent(new MouseEvent('click', {
       view: window,
       bubbles: true,
-      cancelable: true
+      cancelable: true,
     }));
 
     this._reset();
@@ -152,7 +150,7 @@ class ZeroClick {
     // call the appropriate callback
     this._props.onCancel({
       target: target,
-      url: target.href
+      url: target.href,
     });
 
     target.dispatchEvent(new CustomEvent('cancel'));

@@ -1,5 +1,3 @@
-'use strict';
-
 // default properties
 export default {
   on: 'a',
@@ -7,5 +5,5 @@ export default {
   preventClick: true,
   onEngage() {},
   onDispatch() {},
-  onCancel() {}
+  onCancel() {},
 };

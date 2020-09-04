@@ -3,14 +3,14 @@ export function init() {
     mouse: {
       enter: new MouseEvent('mouseenter'),
       leave: new MouseEvent('mouseleave'),
-      click: new MouseEvent('click')
+      click: new MouseEvent('click'),
     },
     keyboard: {
       enter: new KeyboardEvent('keydown', {
         code: 'Enter',
-        key: 'Enter'
-      })
-    }
+        key: 'Enter',
+      }),
+    },
   };
 
   const link = document.createElement('a');
@@ -18,7 +18,10 @@ export function init() {
 
   document.body.appendChild(link);
 
-  return { link, event };
+  return {
+    link,
+    event,
+  };
 }
 
 export function clear() {

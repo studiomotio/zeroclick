@@ -38,7 +38,7 @@ it('should have nodelist properly populated', () => {
 describe('handle properties', () => {
   it('could have custom props that override defaults', () => {
     zeroclick.init({
-      timeout: 700
+      timeout: 700,
     });
 
     expect(zeroclick.props.timeout).toBe(700);
@@ -46,7 +46,7 @@ describe('handle properties', () => {
 
   it('could have props.on set with a custom query selector', () => {
     zeroclick.init({
-      on: document.querySelectorAll('a')
+      on: document.querySelectorAll('a'),
     });
 
     expect(zeroclick._nodelist.length).toBe(1);
@@ -54,7 +54,7 @@ describe('handle properties', () => {
 
   it('should use previous props on refresh', () => {
     zeroclick.init({
-      timeout: 700
+      timeout: 700,
     });
 
     zeroclick.refresh();
@@ -90,7 +90,7 @@ describe('handle event listeners', () => {
 
   it('should listen to click', () => {
     zeroclick.init({
-      preventClick: false
+      preventClick: false,
     });
 
     spy = jest.spyOn(zeroclick, '_click');
@@ -102,7 +102,7 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
-  it ('should listen to `Enter` key', () => {
+  it('should listen to `Enter` key', () => {
     zeroclick.init();
 
     spy = jest.spyOn(zeroclick, '_keydown');
@@ -127,7 +127,7 @@ describe('handle event listeners', () => {
 
   it('should do nothing on click when preventClick is enable', () => {
     zeroclick.init({
-      preventClick: true
+      preventClick: true,
     });
 
     spy = jest.spyOn(zeroclick, '_click');
@@ -139,7 +139,7 @@ describe('handle event listeners', () => {
 
   it('should return on engage when navigating', () => {
     zeroclick.init({
-      preventClick: false
+      preventClick: false,
     });
 
     html.link.dispatchEvent(html.event.mouse.click);
@@ -152,7 +152,7 @@ describe('handle event listeners', () => {
 
   it('should return on cancel when navigating', () => {
     zeroclick.init({
-      preventClick: false
+      preventClick: false,
     });
 
     spy = jest.spyOn(zeroclick, '_cancel');
@@ -164,7 +164,7 @@ describe('handle event listeners', () => {
 
   it('should return when worker is undefined', () => {
     zeroclick.init({
-      preventClick: false
+      preventClick: false,
     });
 
     zeroclick._worker = undefined;
@@ -196,7 +196,7 @@ describe('handle promises', () => {
     zeroclick.init({
       await(resolve) {
         resolve();
-      }
+      },
     });
 
     spy = jest.spyOn(zeroclick, '_dispatch');
@@ -214,7 +214,7 @@ describe('handle promises', () => {
     zeroclick.init({
       await() {
         throw new Error('exception');
-      }
+      },
     });
 
     spy = jest.spyOn(zeroclick, '_reset');
@@ -230,7 +230,7 @@ describe('handle promises', () => {
     zeroclick.init({
       await(resolve, reject) {
         reject();
-      }
+      },
     });
 
     html.link.dispatchEvent(html.event.mouse.enter);

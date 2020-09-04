@@ -1,5 +1,3 @@
-'use strict';
-
 const path = require('path');
 const { merge } = require('webpack-merge');
 
@@ -8,11 +6,11 @@ module.exports = () => merge(require('./webpack.common.js')(), {
   devServer: {
     contentBase: [
       path.join(__dirname, '/docs'),
-      path.join(__dirname, '/src')
+      path.join(__dirname, '/src'),
     ],
     watchContentBase: true,
     compress: true,
     port: 9000,
-    open: true
-  }
+    open: true,
+  },
 });
