@@ -3,9 +3,6 @@
   "rules": {
     "at-rule-no-unknown": true,
     "declaration-no-important": true,
-    "declaration-property-unit-whitelist": {
-      "line-height": ["vh"]
-    },
     "font-family-name-quotes": "always-unless-keyword",
     "function-url-quotes": "always",
     "function-url-no-scheme-relative": true,
