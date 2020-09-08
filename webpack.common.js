@@ -1,5 +1,4 @@
 const path = require('path');
-const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = () => ({
@@ -37,8 +36,8 @@ module.exports = () => ({
         loader: 'postcss-loader',
         options: {
           postcssOptions: {
-            plugins: () => [
-              autoprefixer(),
+            plugins: [
+              ['autoprefixer'],
             ],
           },
         },
