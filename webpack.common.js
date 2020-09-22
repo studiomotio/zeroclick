@@ -17,38 +17,44 @@ module.exports = () => ({
     },
   },
   module: {
-    rules: [{
-      test: /\.woff$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          name: '[folder]/[name].[ext]',
-          emitFile: false,
-        },
-      },
-    }, {
-      test: /\.scss$/,
-      use: [{
-        loader: MiniCssExtractPlugin.loader,
-      }, {
-        loader: 'css-loader',
-      }, {
-        loader: 'postcss-loader',
-        options: {
-          postcssOptions: {
-            plugins: [
-              ['autoprefixer'],
-            ],
+    rules: [
+      {
+        test: /\.woff$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[folder]/[name].[ext]',
+              emitFile: false,
+            },
           },
-        },
+        ],
       }, {
-        loader: 'sass-loader',
-      }],
-    }, {
-      test: /\.js$/,
-      use: 'babel-loader',
-      exclude: /node_modules/,
-    }],
+        test: /\.scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          }, {
+            loader: 'css-loader',
+          }, {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  ['autoprefixer'],
+                ],
+              },
+            },
+          }, {
+            loader: 'sass-loader',
+          },
+        ],
+      }, {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
