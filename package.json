@@ -62,7 +62,7 @@
     "microbundle": "^0.12.3",
     "mini-css-extract-plugin": "^0.11.2",
     "node-sass": "^4.14.1",
-    "postcss": "^7.0.34",
+    "postcss": "^8.0.7",
     "postcss-loader": "^4.0.2",
     "sass-loader": "^10.0.2",
     "stylelint": "^13.7.1",
