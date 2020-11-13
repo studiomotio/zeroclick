@@ -51,9 +51,9 @@
     "@babel/preset-env": "^7.12.1",
     "@barba/core": "^2.9.7",
     "@barba/css": "^2.1.15",
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "^10.0.2",
     "babel-jest": "^26.6.3",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.2.1",
     "css-loader": "^4.3.0",
     "eslint": "^7.13.0",
     "file-loader": "^6.2.0",
@@ -64,12 +64,12 @@
     "postcss": "^8.1.6",
     "postcss-loader": "^4.0.4",
     "sass": "^1.29.0",
-    "sass-loader": "^10.0.5",
+    "sass-loader": "^10.1.0",
     "stylelint": "^13.7.2",
     "stylelint-config-standard": "^20.0.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.3.0"
+    "webpack-merge": "^5.4.0"
   }
 }
