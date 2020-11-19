@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge');
 
 module.exports = () => merge(require('./webpack.common.js')(), {
   mode: 'development',
+  devtool: 'source-map',
   devServer: {
     contentBase: [
       path.join(__dirname, '/docs'),
