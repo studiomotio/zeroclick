@@ -3,12 +3,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = () => ({
   entry: [
-    './src/zeroclick.js',
     './docs/src/index.js',
     './docs/src/index.scss',
   ],
   output: {
-    path: path.resolve(__dirname, 'docs'),
     filename: 'assets/app.js',
   },
   resolve: {
