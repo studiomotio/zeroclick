@@ -1,4 +1,3 @@
-const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = () => ({
@@ -11,7 +10,8 @@ module.exports = () => ({
   },
   resolve: {
     alias: {
-      source: path.resolve(__dirname, 'src'),
+      root: __dirname,
+      source: 'root/src/',
     },
   },
   module: {
