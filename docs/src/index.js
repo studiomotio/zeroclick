@@ -1,19 +1,30 @@
 import zeroclick from 'source/zeroclick.js';
 import barba from '@barba/core';
-import barbaCss from '@barba/css';
+import gsap from 'gsap';
 
-barba.hooks.once(() => {
-  zeroclick.init({
-    on: 'a:not(.github-button)',
-  });
+zeroclick.init({
+  on: 'a:not(.github-button)',
 });
 
 barba.hooks.enter(() => {
   zeroclick.refresh();
 });
 
-barba.use(barbaCss);
-
 barba.init({
   preventRunning: true,
+  transitions: [{
+    name: 'default',
+    leave(data) {
+      return gsap.to(data.current.container, {
+        opacity: 0,
+        duration: 0.4,
+      });
+    },
+    enter(data) {
+      return gsap.from(data.next.container, {
+        opacity: 0,
+        duration: 0.4,
+      });
+    },
+  }],
 });

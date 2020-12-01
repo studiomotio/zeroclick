@@ -43,6 +43,7 @@ body {
 }
 
 main {
+  position: absolute;
   width: 100%;
   max-width: 1200px;
   padding: 0 40px;
@@ -101,21 +102,6 @@ h1 {
   &:hover {
     opacity: 0.5;
   }
-}
-
-.barba-leave,
-.barba-enter-to {
-  opacity: 1;
-}
-
-.barba-enter,
-.barba-leave-to {
-  opacity: 0;
-}
-
-.barba-leave-active,
-.barba-enter-active {
-  transition: opacity 400ms ease;
 }
 
 @media (max-width: 640px) {
