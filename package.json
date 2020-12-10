@@ -48,7 +48,6 @@
   "homepage": "https://github.com/studiomotio/zeroclick#readme",
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.7",
     "@barba/core": "^2.9.7",
     "autoprefixer": "^10.1.0",
