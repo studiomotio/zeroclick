@@ -97,10 +97,10 @@ h1 {
   display: inline-flex;
   margin-left: 20px;
   opacity: 0;
-  animation: github-star 1.5s 500ms ease forwards;
+  transition: transform 200ms ease;
 
   &:hover {
-    opacity: 0.5;
+    transform: scale(0.9);
   }
 }
 
@@ -136,15 +136,5 @@ h1 {
 
   .github-button {
     display: none;
-  }
-}
-
-@keyframes github-star {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }
