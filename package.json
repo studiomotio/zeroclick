@@ -67,6 +67,7 @@
     "sass-loader": "^10.1.0",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
