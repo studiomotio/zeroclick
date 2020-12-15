@@ -2,11 +2,6 @@ import zeroclick from 'source/zeroclick.js';
 import barba from '@barba/core';
 import gsap from 'gsap';
 
-// display the Github button
-gsap.to(document.querySelector('.github-button'), {
-  opacity: 1,
-  delay: 0.8,
-});
 
 zeroclick.init({
   on: 'a:not(.github-button)',
@@ -30,6 +25,15 @@ barba.init({
       return gsap.from(data.next.container, {
         opacity: 0,
         duration: 0.25,
+      });
+    },
+  }],
+  views: [{
+    namespace: 'index',
+    afterEnter() {
+      gsap.to(document.querySelector('.github-button'), {
+        opacity: 1,
+        delay: 0.25,
       });
     },
   }],
