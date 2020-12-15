@@ -49,32 +49,6 @@ main {
   padding: 0 40px;
 }
 
-p {
-  a {
-    position: relative;
-    color: $vibrant-color;
-    text-decoration: none;
-    white-space: nowrap;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 4px;
-      bottom: -5px;
-      left: 0;
-      background: currentColor;
-    }
-
-    &:hover {
-      &::before {
-        width: 100%;
-        transition: width 400ms ease;
-      }
-    }
-  }
-}
-
 h1 {
   display: inline-flex;
   align-items: center;
@@ -86,22 +60,48 @@ h1 {
   cursor: progress;
 }
 
+.link {
+  position: relative;
+  color: $vibrant-color;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    bottom: -5px;
+    left: 0;
+    background: currentColor;
+    transition: width 400ms ease;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
 .title {
   height: 100px;
 }
 
-.github-star {
-  height: 30px;
-}
+.github {
+  &-star {
+    height: 30px;
+  }
 
-.github-button {
-  display: inline-flex;
-  margin-left: 20px;
-  opacity: 0;
-  transition: transform 200ms ease;
+  &-button {
+    display: inline-flex;
+    margin-left: 20px;
+    opacity: 0;
+    transition: transform 200ms ease;
 
-  &:hover {
-    transform: scale(0.9);
+    &:hover {
+      transform: scale(0.9);
+    }
   }
 }
 
@@ -116,12 +116,12 @@ h1 {
   stroke: $vibrant-color;
   stroke-width: 4px;
   transform-origin: center;
-}
 
-.progress-circle {
-  r: 30;
-  cx: 50%;
-  cy: 50%;
+  &-circle {
+    r: 30;
+    cx: 50%;
+    cy: 50%;
+  }
 }
 
 @media (max-width: 640px) {
@@ -139,16 +139,15 @@ h1 {
     flex-direction: column;
   }
 
-  p {
-    a {
-      &::before {
-        height: 2px;
-      }
-    }
-  }
-
   img {
     width: 100%;
+  }
+
+  .link {
+    &::before {
+      height: 2px;
+      bottom: -3px;
+    }
   }
 
   .title {
@@ -156,8 +155,10 @@ h1 {
     margin: 40px 0 0 0;
   }
 
-  .github-button {
-    display: none;
+  .github {
+    &-button {
+      display: none;
+    }
   }
 
   .progress {
@@ -166,9 +167,9 @@ h1 {
     width: 50px;
     height: 50px;
     stroke-width: 2px;
-  }
 
-  .progress-circle {
-    r: 20;
+    &-circle {
+      r: 20;
+    }
   }
 }
