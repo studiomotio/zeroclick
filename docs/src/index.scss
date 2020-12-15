@@ -119,9 +119,11 @@ h1 {
     flex-direction: column;
   }
 
-  a {
-    &::before {
-      height: 2px;
+  p {
+    a {
+      &::before {
+        height: 2px;
+      }
     }
   }
 
