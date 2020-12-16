@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = () => ({
   entry: [
@@ -61,6 +62,11 @@ module.exports = () => ({
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'assets/app.css',
+    }),
+    new StylelintPlugin({
+      cache: true,
+      fix: true,
+      files: '**/*.scss',
     }),
   ],
 });
