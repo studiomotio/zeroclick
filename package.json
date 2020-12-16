@@ -9,8 +9,8 @@
   "module": "dist/zeroclick.mjs",
   "scripts": {
     "lint": "eslint \"**/*.js\" && stylelint \"docs/src/**/*.scss\"",
-    "dev": "webpack-dev-server --config webpack.dev.js",
-    "docs": "webpack --config webpack.docs.js",
+    "dev": "webpack-dev-server --config webpack.dev.js --progress",
+    "docs": "webpack --config webpack.docs.js --progress",
     "build": "microbundle --no-sourcemap",
     "test": "jest",
     "coverage": "jest --coverage"
