@@ -2,8 +2,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = () => ({
   entry: [
-    './docs/src/index.js',
-    './docs/src/index.scss',
+    'docs/src/index.js',
+    'docs/src/index.scss',
   ],
   output: {
     filename: 'assets/app.js',
@@ -12,6 +12,7 @@ module.exports = () => ({
     alias: {
       root: __dirname,
       source: 'root/src/',
+      docs: 'root/docs/',
     },
   },
   module: {
