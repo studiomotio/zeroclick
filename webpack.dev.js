@@ -16,5 +16,6 @@ module.exports = () => merge(require('./webpack.common.js')(), {
     compress: true,
     port: 9000,
     open: true,
+    serveIndex: false,
   },
 });
