@@ -56,11 +56,6 @@ h1 {
   margin: 20px 0;
 }
 
-[data-zeroclick='dispatch'] {
-  color: $base-color;
-  cursor: progress;
-}
-
 .link {
   position: relative;
   color: $vibrant-color;
@@ -115,6 +110,11 @@ h1 {
     cx: 50%;
     cy: 50%;
   }
+}
+
+[data-zeroclick='dispatch'] {
+  color: $base-color;
+  cursor: progress;
 }
 
 @media (max-width: 640px) {
