@@ -1,3 +1,4 @@
+const ESLintPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
@@ -67,6 +68,10 @@ module.exports = () => ({
       cache: true,
       fix: true,
       files: '**/*.scss',
+    }),
+    new ESLintPlugin({
+      cache: true,
+      fix: true,
     }),
   ],
 });
