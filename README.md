@@ -9,7 +9,7 @@ This plugin is a **web concept for a zero click user experience**, meaning that 
 Even if this package may seems funny at first, it has **many advantages**:
 - discover the no click navigation: just hover the link and go!
 - improve accessibility for users that could have difficulties to click
-- use `Promise`: do something before leaving the page
+- use `Promise`: wait for something before leaving the page
 - create captivating interactive animations
 - works great with [@barbajs](http://barba.js.org/)
 - compatible with touch screens
