@@ -80,6 +80,19 @@ h1 {
   }
 }
 
+.note {
+  position: relative;
+  padding-left: 20px;
+  color: lighten($base-color, 55%);
+  font-size: 0.63em;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    content: '*';
+  }
+}
+
 .github {
   &-button {
     display: inline-flex;

@@ -2,6 +2,7 @@ import zeroclick from 'source/zeroclick.js';
 import barba from '@barba/core';
 import gsap from 'gsap';
 
+let github = document.querySelector('.github-button');
 let progress = document.querySelector('.progress');
 let circle = document.querySelector('.progress-circle');
 let length = circle.getTotalLength();
@@ -39,11 +40,12 @@ zeroclick.init({
   onDispatch() {
     timeline.clear().to(progress, {
       opacity: 0,
-      duration: 0.2,
-      delay: 0.1,
+      duration: 0.1,
+      scale: 0.9,
       onComplete: () => {
         gsap.set(progress, {
           rotation: 0,
+          scale: 1,
           strokeDasharray: length,
           strokeDashoffset: length,
         });
@@ -52,7 +54,8 @@ zeroclick.init({
   },
 });
 
-barba.hooks.enter(() => {
+barba.hooks.enter(({ current }) => {
+  current.container.remove();
   zeroclick.refresh();
 });
 
@@ -60,6 +63,12 @@ barba.init({
   preventRunning: true,
   transitions: [{
     name: 'default',
+    once() {
+      gsap.to(github, {
+        opacity: 1,
+        delay: 0.25,
+      });
+    },
     leave(data) {
       return gsap.to(data.current.container, {
         opacity: 0,
@@ -70,15 +79,6 @@ barba.init({
       return gsap.from(data.next.container, {
         opacity: 0,
         duration: 0.25,
-      });
-    },
-  }],
-  views: [{
-    namespace: 'index',
-    afterEnter() {
-      gsap.to(document.querySelector('.github-button'), {
-        opacity: 1,
-        delay: 0.25,
       });
     },
   }],

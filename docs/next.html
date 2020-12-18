@@ -14,10 +14,13 @@
     <link type="text/css" rel="stylesheet" media="all" href="assets/app.css">
   </head>
   <body data-barba="wrapper">
-    <main data-barba="container" data-barba-namespace="wow">
-      <h1><img src="assets/svg/wow.svg" alt="wow!" width="280px" height="100px"></h1>
-      <p>No click was needed to navigate.<br>The <strong>hovered link</strong> brought you to the next page.</p>
-      <p>👈 <a href="/" class="link">back</a> &mdash; 📖 <a href="https://github.com/studiomotio/zeroclick" class="link">Fork on Github</a></p>
+    <main>
+      <h1><img src="assets/svg/zeroclick.svg" alt="zeroclick" width="390px" height="100px"> <a href="https://github.com/studiomotio/zeroclick" target="_blank" title="Star @studiomotio/zeroclick on GitHub" class="github-button" rel="noopener"><img src="assets/svg/github.svg" alt="Star studiomotio/zeroclick on GitHub" width="70px" height="30px"></a></h1>
+      <div data-barba="container" data-barba-namespace="next">
+        <p>No click was needed to navigate.<br>The plugin <strong>wait for gsap animation*</strong> to complete.</p>
+        <p>👈 <a href="/" class="link">back</a> &mdash; 📖 <a href="https://github.com/studiomotio/zeroclick" class="link">API on Github</a></p>
+        <p class="note">You can wait for any Promise-based action before leaving the page:<br>javascript animation, content prefetch, image preload, etc.</p>
+      </div>
     </main>
     <svg class="progress">
       <circle class="progress-circle"/>
