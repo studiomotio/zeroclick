@@ -1,14 +1,11 @@
-# Github workflow to publish the documentation to Github Pages
+# Github workflow to deploy the documentation to Github Pages
 
-name: Publish docs
+name: Deploy docs
 
 on:
   push:
     branches:
       - master
-    paths:
-      - 'docs/src/**'
-      - 'src/**'
 
 jobs:
   deploy:
@@ -26,10 +23,10 @@ jobs:
       - name: Build docs bundle
         run: npm run docs
 
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v4
-        with:
-          add: "docs/assets"
-          message: "Deploy docs"
+      - name: Deploy the documentation
+        uses: JamesIves/github-pages-deploy-action@master
         env:
+          BASE_BRANCH: master
+          BRANCH: docs
+          FOLDER: docs/dist
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

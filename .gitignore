@@ -1,4 +1,7 @@
+/.eslintcache
+/.stylelintcache
 /node_modules
+/wds
 /dist
-/.dev
 /coverage
+/docs/dist

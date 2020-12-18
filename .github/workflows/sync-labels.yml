@@ -4,11 +4,17 @@
 name: Sync labels
 
 on:
+  create:
+    branches:
+      - master
+    paths:
+      - .github/labels.yml
+
   push:
     branches:
       - master
     paths:
-      - '.github/labels.yml'
+      - .github/labels.yml
 
 jobs:
   build:

@@ -75,7 +75,7 @@ API reference that describe plugin properties.
 Type: `String` | `NodeList`
 Default: `a`
 
-Define **on which elements** the plugin is applied.
+Define **on which elements** the plugin is applied. You can update this list at any time inside your application using the [`refresh`](#refresh) method.
 
 ```js
 zeroclick.init({
@@ -97,7 +97,7 @@ zeroclick.init({
 });
 ```
 
-> When using a custom `Promise` through [`await`](#await), this property will be ignored.
+> This property will be ignored when using a custom `Promise` through [`await`](#await).
 
 ### preventClick
 Type: `Boolean`
@@ -111,7 +111,7 @@ Prevent the user to click on eligible links: this allow a **full "zero click" ex
 Type: `Promise`
 Default: `undefined`
 
-Define a **custom `Promise` that need to be resolved** in order to dispatch the link `click` event, or cancel it if the `Promise` is rejected. This allow you to do some cool stuff before going to the next page: like playing an animation, fetch some content, etc..
+Define a **custom `Promise` that need to be resolved** in order to dispatch the link `click` event, or cancel it if the `Promise` is rejected. This allow you to do some cool stuff before going to the next page: like playing an animation, fetching some content, etc..
 
 ```js
 zeroclick.init({
@@ -147,7 +147,7 @@ zeroclick.init({
 ### refresh()
 Type: `Function`
 
-Refresh the internal `NodeList` in order to **add new eligible links from the DOM**, this is useful when your site is running like a SPA _(Single Page Application)_, with Vue, React, etc..
+Refresh the [internal `NodeList`](#on) in order to **add new eligible links from the DOM**. This is useful when your site is running like a SPA _(Single Page Application)_, with Vue, React, etc..
 
 ```js
 zeroclick.refresh();

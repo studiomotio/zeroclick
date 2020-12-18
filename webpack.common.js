@@ -1,59 +1,77 @@
-'use strict';
-
-const path = require('path');
-const autoprefixer = require('autoprefixer');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = () => ({
   entry: [
-    './src/zeroclick.js',
-    './docs/src/index.js',
-    './docs/src/index.scss'
+    'docs/src/index.js',
+    'docs/src/index.scss',
   ],
   output: {
-    path: path.resolve(__dirname, 'docs'),
-    filename: 'assets/app.js'
+    filename: 'assets/app.js',
   },
   resolve: {
     alias: {
-      source: path.resolve(__dirname, 'src')
-    }
+      root: __dirname,
+      source: 'root/src/',
+      docs: 'root/docs/',
+    },
   },
   module: {
-    rules: [{
-      test: /\.woff$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          name: '[folder]/[name].[ext]',
-          emitFile: false
-        }
-      }
-    }, {
-      test: /\.scss$/,
-      use: [{
-        loader: MiniCssExtractPlugin.loader
+    rules: [
+      {
+        test: /\.woff$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[folder]/[name].[ext]',
+              emitFile: false,
+            },
+          },
+        ],
       }, {
-        loader: 'css-loader'
+        test: /\.scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          }, {
+            loader: 'css-loader',
+          }, {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  ['autoprefixer'],
+                ],
+              },
+            },
+          }, {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass'),
+            },
+          },
+        ],
       }, {
-        loader: 'postcss-loader',
-        options: {
-          plugins: () => [
-            autoprefixer()
-          ]
-        }
-      }, {
-        loader: 'sass-loader'
-      }]
-    }, {
-      test: /\.js$/,
-      use: 'babel-loader',
-      exclude: /node_modules/
-    }]
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/app.css'
-    })
-  ]
+      filename: 'assets/app.css',
+    }),
+    new StylelintPlugin({
+      cache: true,
+      fix: true,
+      files: '**/*.scss',
+    }),
+    new ESLintPlugin({
+      cache: true,
+      fix: true,
+    }),
+  ],
 });
