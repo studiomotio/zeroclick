@@ -1,17 +1,14 @@
 const path = require('path');
-const webpack = require('webpack');
-const pack = require('./package.json');
 const { merge } = require('webpack-merge');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-
-// package preamble
-const preamble = `/*!\n  ${pack.name} – ${pack.description}\n  ${pack.author.name} ${pack.author.github} ${new Date().getFullYear()} ${pack.license}\n  ${pack.version}\n*/`;
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = () => merge(require('./webpack.common.js')(), {
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, 'docs/dist'),
   },
   optimization: {
     minimizer: [
@@ -20,13 +17,13 @@ module.exports = () => merge(require('./webpack.common.js')(), {
         terserOptions: {
           output: {
             comments: false,
-            preamble: preamble,
           },
         },
       }),
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new OptimizeCSSAssetsPlugin({
       cssProcessorPluginOptions: {
         preset: ['default', {
@@ -36,11 +33,21 @@ module.exports = () => merge(require('./webpack.common.js')(), {
         }],
       },
     }),
-    new webpack.BannerPlugin({
-      raw: true,
-      banner: () => {
-        return preamble;
-      },
+    new CopyPlugin({
+      patterns: [
+        {
+          from: '*',
+          context: 'docs',
+        }, {
+          from: 'docs/assets',
+          to: 'assets',
+          globOptions: {
+            ignore: [
+              'src',
+            ],
+          },
+        },
+      ],
     }),
   ],
 });
