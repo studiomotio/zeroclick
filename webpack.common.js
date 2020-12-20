@@ -8,6 +8,7 @@ module.exports = () => ({
     'docs/src/index.scss',
   ],
   output: {
+    publicPath: '/',
     filename: 'assets/app.js',
   },
   resolve: {
