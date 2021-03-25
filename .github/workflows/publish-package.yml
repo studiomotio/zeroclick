@@ -14,8 +14,8 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm ci
       - run: npm run lint
-      - run: npm test
       - run: npm run build
+      - run: npm test
 
   publish-npm:
     needs: build
