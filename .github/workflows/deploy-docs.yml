@@ -24,9 +24,7 @@ jobs:
         run: npm run docs
 
       - name: Deploy the documentation
-        uses: JamesIves/github-pages-deploy-action@master
+        uses: JamesIves/github-pages-deploy-action@4
         env:
-          BASE_BRANCH: master
-          BRANCH: docs
-          FOLDER: docs/dist
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: docs
+          folder: docs/dist
