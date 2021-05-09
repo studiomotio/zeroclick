@@ -24,7 +24,7 @@ jobs:
         run: npm run docs
 
       - name: Deploy the documentation
-        uses: JamesIves/github-pages-deploy-action@4
+        uses: JamesIves/github-pages-deploy-action@4.1.1
         env:
           branch: docs
           folder: docs/dist
