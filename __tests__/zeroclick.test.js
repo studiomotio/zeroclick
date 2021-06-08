@@ -1,4 +1,4 @@
-import * as dom from '../__mocks__/dom';
+import { dom } from '../__mocks__';
 import defaults from '../src/defaults';
 import zeroclick from '../src/zeroclick';
 
