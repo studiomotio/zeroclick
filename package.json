@@ -56,7 +56,7 @@
     "copy-webpack-plugin": "^8.1.1",
     "css-loader": "^5.2.6",
     "css-minimizer-webpack-plugin": "^3.0.0",
-    "eslint": "^7.26.0",
+    "eslint": "^7.28.0",
     "eslint-webpack-plugin": "^2.5.4",
     "file-loader": "^6.2.0",
     "gsap": "^3.6.1",
