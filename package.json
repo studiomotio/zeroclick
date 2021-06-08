@@ -50,7 +50,7 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
     "@barba/core": "^2.9.7",
-    "autoprefixer": "^10.2.5",
+    "autoprefixer": "^10.2.6",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^8.1.1",
