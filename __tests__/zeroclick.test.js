@@ -13,7 +13,7 @@ afterEach(() => {
   dom.clear();
 });
 
-it('has defaults', () => {
+test('has defaults', () => {
   zeroclick.init();
 
   expect(zeroclick.props).toStrictEqual(defaults);
@@ -22,7 +22,7 @@ it('has defaults', () => {
   expect(zeroclick._worker).toBeUndefined();
 });
 
-it('should have nodelist properly populated', () => {
+test('should have nodelist properly populated', () => {
   dom.clear();
 
   let link1 = document.createElement('a');
@@ -36,7 +36,7 @@ it('should have nodelist properly populated', () => {
 });
 
 describe('handle properties', () => {
-  it('could have custom props that override defaults', () => {
+  test('could have custom props that override defaults', () => {
     zeroclick.init({
       timeout: 700,
     });
@@ -44,7 +44,7 @@ describe('handle properties', () => {
     expect(zeroclick.props.timeout).toBe(700);
   });
 
-  it('could have props.on set with a custom query selector', () => {
+  test('could have props.on set with a custom query selector', () => {
     zeroclick.init({
       on: document.querySelectorAll('a'),
     });
@@ -52,7 +52,7 @@ describe('handle properties', () => {
     expect(zeroclick._nodelist.length).toBe(1);
   });
 
-  it('should use previous props on refresh', () => {
+  test('should use previous props on refresh', () => {
     zeroclick.init({
       timeout: 700,
     });
@@ -64,7 +64,7 @@ describe('handle properties', () => {
 });
 
 describe('handle event listeners', () => {
-  it('should listen to mouseenter', () => {
+  test('should listen to mouseenter', () => {
     zeroclick.init();
 
     spy = jest.spyOn(zeroclick, '_engage');
@@ -76,7 +76,7 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
-  it('should listen to mouseleave', () => {
+  test('should listen to mouseleave', () => {
     zeroclick.init();
 
     spy = jest.spyOn(zeroclick, '_cancel');
@@ -88,7 +88,7 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
-  it('should listen to click', () => {
+  test('should listen to click', () => {
     zeroclick.init({
       preventClick: false,
     });
@@ -102,7 +102,7 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
-  it('should listen to `Enter` key', () => {
+  test('should listen to `Enter` key', () => {
     zeroclick.init();
 
     spy = jest.spyOn(zeroclick, '_keydown');
@@ -114,7 +114,7 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
-  it('should remove event listeners on destroy', () => {
+  test('should remove event listeners on destroy', () => {
     zeroclick.init();
     zeroclick.destroy();
 
@@ -125,7 +125,7 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
-  it('should do nothing on click when preventClick is enable', () => {
+  test('should do nothing on click when preventClick is enable', () => {
     zeroclick.init({
       preventClick: true,
     });
@@ -137,7 +137,7 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
-  it('should return on engage when navigating', () => {
+  test('should return on engage when navigating', () => {
     zeroclick.init({
       preventClick: false,
     });
@@ -150,7 +150,7 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
-  it('should return on cancel when navigating', () => {
+  test('should return on cancel when navigating', () => {
     zeroclick.init({
       preventClick: false,
     });
@@ -162,7 +162,7 @@ describe('handle event listeners', () => {
     spy.mockRestore();
   });
 
-  it('should return when worker is undefined', () => {
+  test('should return when worker is undefined', () => {
     zeroclick.init({
       preventClick: false,
     });
@@ -178,7 +178,7 @@ describe('handle event listeners', () => {
 });
 
 describe('handle promises', () => {
-  it('should dispatch navigation when using a timeout promise', () => {
+  test('should dispatch navigation when using a timeout promise', () => {
     zeroclick.init();
 
     spy = jest.spyOn(zeroclick, '_dispatch');
@@ -192,7 +192,7 @@ describe('handle promises', () => {
     });
   });
 
-  it('should dispatch navigation when using a custom promise', () => {
+  test('should dispatch navigation when using a custom promise', () => {
     zeroclick.init({
       await(resolve) {
         resolve();
@@ -210,7 +210,7 @@ describe('handle promises', () => {
     });
   });
 
-  it('should reset when promise throw an exception', () => {
+  test('should reset when promise throw an exception', () => {
     zeroclick.init({
       await() {
         throw new Error('exception');
@@ -226,7 +226,7 @@ describe('handle promises', () => {
     });
   });
 
-  it('should reject promise on cancel', () => {
+  test('should reject promise on cancel', () => {
     zeroclick.init({
       await(resolve, reject) {
         reject();
