@@ -61,7 +61,7 @@
     "file-loader": "^6.2.0",
     "gsap": "^3.6.1",
     "husky": "^4.3.8",
-    "jest": "^26.6.3",
+    "jest": "^27.0.4",
     "microbundle": "^0.13.0",
     "mini-css-extract-plugin": "^1.6.0",
     "postcss": "^8.3.0",
