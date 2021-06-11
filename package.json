@@ -13,12 +13,8 @@
     "docs": "webpack --config webpack.docs.js --progress",
     "build": "microbundle --no-sourcemap",
     "test": "jest",
-    "coverage": "jest --coverage"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run lint"
-    }
+    "coverage": "jest --coverage",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -60,7 +56,7 @@
     "eslint-webpack-plugin": "^2.5.4",
     "file-loader": "^6.2.0",
     "gsap": "^3.6.1",
-    "husky": "^4.3.8",
+    "husky": "^6.0.0",
     "jest": "^27.0.4",
     "microbundle": "^0.13.0",
     "mini-css-extract-plugin": "^1.6.0",
