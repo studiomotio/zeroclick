@@ -21,23 +21,15 @@ module.exports = () => ({
   module: {
     rules: [
       {
-        test: /\.woff$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[folder]/[name].[ext]',
-              emitFile: false,
-            },
-          },
-        ],
-      }, {
         test: /\.scss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
           }, {
             loader: 'css-loader',
+            options: {
+              url: false,
+            },
           }, {
             loader: 'postcss-loader',
             options: {

@@ -3,7 +3,7 @@ $vibrant-color: #2443db;
 
 @font-face {
   font-family: 'Sailec';
-  src: local('Sailec'), url('../assets/font/Sailec.woff') format('woff');
+  src: local('Sailec'), url('font/Sailec.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -11,7 +11,7 @@ $vibrant-color: #2443db;
 
 @font-face {
   font-family: 'Sailec';
-  src: local('Sailec-Bold'), url('../assets/font/Sailec-Bold.woff') format('woff');
+  src: local('Sailec-Bold'), url('font/Sailec-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
