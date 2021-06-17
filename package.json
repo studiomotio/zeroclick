@@ -13,12 +13,8 @@
     "docs": "webpack --config webpack.docs.js --progress",
     "build": "microbundle --no-sourcemap",
     "test": "jest",
-    "coverage": "jest --coverage"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run lint"
-    }
+    "coverage": "jest --coverage",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -47,34 +43,33 @@
   },
   "homepage": "https://github.com/studiomotio/zeroclick#readme",
   "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "@babel/preset-env": "^7.14.1",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
     "@barba/core": "^2.9.7",
-    "autoprefixer": "^10.2.5",
-    "babel-jest": "^26.6.3",
+    "autoprefixer": "^10.2.6",
+    "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
-    "copy-webpack-plugin": "^8.1.1",
-    "css-loader": "^5.2.4",
-    "css-minimizer-webpack-plugin": "^2.0.0",
-    "eslint": "^7.26.0",
+    "copy-webpack-plugin": "^9.0.0",
+    "css-loader": "^5.2.6",
+    "css-minimizer-webpack-plugin": "^3.0.0",
+    "eslint": "^7.28.0",
     "eslint-webpack-plugin": "^2.5.4",
-    "file-loader": "^6.2.0",
-    "gsap": "^3.6.1",
-    "husky": "^4.3.8",
-    "jest": "^26.6.3",
+    "gsap": "^3.7.0",
+    "husky": "^6.0.0",
+    "jest": "^27.0.4",
     "microbundle": "^0.13.0",
     "mini-css-extract-plugin": "^1.6.0",
-    "postcss": "^8.2.14",
-    "postcss-loader": "^5.2.0",
-    "sass": "^1.32.12",
-    "sass-loader": "^11.0.1",
+    "postcss": "^8.3.5",
+    "postcss-loader": "^6.1.0",
+    "sass": "^1.35.1",
+    "sass-loader": "^12.1.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
-    "stylelint-webpack-plugin": "^2.1.1",
-    "webpack": "^5.36.2",
-    "webpack-cli": "^4.7.0",
+    "stylelint-webpack-plugin": "^2.2.0",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
-    "webpack-merge": "^5.7.3"
+    "webpack-merge": "^5.8.0"
   }
 }
