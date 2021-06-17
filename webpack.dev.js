@@ -17,5 +17,6 @@ module.exports = () => merge(require('./webpack.common.js')(), {
     port: 9000,
     open: true,
     serveIndex: false,
+    historyApiFallback: true,
   },
 });
