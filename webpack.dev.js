@@ -13,6 +13,7 @@ module.exports = () => merge(require('./webpack.common.js')(), {
       path.join(__dirname, 'wds'),
     ],
     watchContentBase: true,
+    hot: true,
     compress: true,
     port: 9000,
     open: true,
