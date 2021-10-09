@@ -59,7 +59,7 @@
     "jest": "^27.2.5",
     "microbundle": "^0.13.0",
     "mini-css-extract-plugin": "^1.6.0",
-    "postcss": "^8.3.5",
+    "postcss": "^8.3.9",
     "postcss-loader": "^6.1.0",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
