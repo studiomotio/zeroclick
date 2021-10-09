@@ -8,16 +8,16 @@ module.exports = () => merge(require('./webpack.common.js')(), {
     path: path.join(__dirname, 'wds'),
   },
   devServer: {
-    contentBase: [
-      path.join(__dirname, 'docs'),
-      path.join(__dirname, 'wds'),
-    ],
-    watchContentBase: true,
-    hot: true,
-    compress: true,
     port: 9000,
+    static: {
+      serveIndex: false,
+      directory: path.join(__dirname, 'docs'),
+    },
+    client: {
+      logging: 'none',
+      overlay: false,
+    },
     open: true,
-    serveIndex: false,
     historyApiFallback: true,
   },
 });
