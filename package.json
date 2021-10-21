@@ -47,7 +47,7 @@
     "@babel/preset-env": "^7.15.8",
     "@barba/core": "^2.9.7",
     "autoprefixer": "^10.3.7",
-    "babel-jest": "^27.2.5",
+    "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.4.0",
