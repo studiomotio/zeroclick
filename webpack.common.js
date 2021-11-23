@@ -29,6 +29,7 @@ module.exports = () => ({
             loader: 'css-loader',
             options: {
               url: false,
+              modules: 'icss',
             },
           }, {
             loader: 'postcss-loader',
