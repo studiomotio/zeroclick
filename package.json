@@ -43,7 +43,7 @@
   },
   "homepage": "https://zeroclick.js.org",
   "devDependencies": {
-    "@babel/core": "^7.16.5",
+    "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.5",
     "@barba/core": "^2.9.7",
     "autoprefixer": "^10.4.1",
