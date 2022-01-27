@@ -41,7 +41,7 @@
       }
     ],
     "selector-attribute-quotes": "always",
-    "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+    "selector-class-pattern": "^([a-z][a-z0-9]*)(-{1,2}[a-z0-9]+)*$",
     "selector-max-id": 0,
     "selector-max-universal": 0,
     "selector-pseudo-class-no-unknown": [
@@ -52,6 +52,7 @@
       }
     ],
     "string-quotes": "single",
+    "scss/at-extend-no-missing-placeholder": null,
     "order/properties-order": [
       {
         "groupName": "position",
