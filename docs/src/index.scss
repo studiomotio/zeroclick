@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $base-color: #2b3138;
 $vibrant-color: #2443db;
 
@@ -68,7 +70,7 @@ h1 {
     left: 0;
     width: 0%;
     height: 4px;
-    background: currentColor;
+    background: currentcolor;
     transition: width 400ms ease;
     content: '';
   }
@@ -83,7 +85,7 @@ h1 {
 .note {
   position: relative;
   padding-left: 20px;
-  color: lighten($base-color, 55%);
+  color: color.adjust($base-color, $lightness: 55%);
   font-size: 0.63em;
 
   &::before {
@@ -170,7 +172,7 @@ h1 {
 
   .title {
     height: 70px;
-    margin: 40px 0 0 0;
+    margin: 40px 0 0;
   }
 
   .github {
