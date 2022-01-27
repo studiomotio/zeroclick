@@ -37,6 +37,12 @@
     "url": "https://www.studiomotio.com",
     "github": "@studiomotio"
   },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/xavierfoucrier"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/studiomotio/zeroclick/issues"
