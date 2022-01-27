@@ -29,7 +29,7 @@ Here you will find the documentation describing **how to use** the plugin.
 As the plugin create an **"untrusted" `MouseEvent`** in order to simulate a user "click", some browsers may interpret `target="_blank"` links as **intrusive pop-up**. Be sure to ignore/ban those kind of links from your site.
 
 ## Contribute
-If you want to report a bug or request a new feature/improvement, please **read the project [contributors guidelines](CONTRIBUTING.md) before**. Thanks for taking time to contribute.
+If you want to report a bug or request a new feature/improvement, please **read the project [contributors guidelines](.github/CONTRIBUTING.md) before**. Thanks for taking time to contribute.
 
 ## License
 The project is developed under the **MIT** license:
