@@ -5,7 +5,7 @@ name: Deploy docs
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -26,7 +26,7 @@ jobs:
       - name: Deploy the documentation
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
-          BASE_BRANCH: master
+          BASE_BRANCH: main
           BRANCH: docs
           FOLDER: docs/dist
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

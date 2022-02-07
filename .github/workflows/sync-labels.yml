@@ -6,13 +6,13 @@ name: Sync labels
 on:
   create:
     branches:
-      - master
+      - main
     paths:
       - .github/labels.yml
 
   push:
     branches:
-      - master
+      - main
     paths:
       - .github/labels.yml
 
