@@ -64,7 +64,7 @@
     "husky": "^7.0.4",
     "jest": "^27.5.1",
     "microbundle": "^0.14.2",
-    "mini-css-extract-plugin": "^2.5.3",
+    "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.4.7",
     "postcss-loader": "^6.2.1",
     "sass": "^1.49.9",
