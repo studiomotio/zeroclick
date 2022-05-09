@@ -64,7 +64,7 @@
     "husky": "^8.0.1",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
-    "microbundle": "^0.14.2",
+    "microbundle": "^0.15.0",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.4.7",
     "postcss-loader": "^6.2.1",
