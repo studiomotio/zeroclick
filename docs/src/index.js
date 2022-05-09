@@ -20,7 +20,7 @@ zeroclick.init({
       rotation: 360,
       strokeDashoffset: 0,
       strokeDasharray: length,
-      duration: 1.2,
+      duration: 0.7,
       onComplete: () => {
         resolve();
       },
