@@ -50,7 +50,7 @@
   "homepage": "https://zeroclick.js.org",
   "devDependencies": {
     "@babel/core": "^7.18.0",
-    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-env": "^7.18.0",
     "@barba/core": "^2.9.7",
     "autoprefixer": "^10.4.7",
     "babel-jest": "^28.1.0",
