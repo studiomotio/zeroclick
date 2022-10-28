@@ -203,5 +203,4 @@ class ZeroClick {
 }
 
 // default export
-const plugin = new ZeroClick();
-export default plugin;
+export default new ZeroClick();
