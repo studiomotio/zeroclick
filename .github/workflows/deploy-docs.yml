@@ -27,8 +27,6 @@ jobs:
 
       - name: Deploy the documentation
         uses: JamesIves/github-pages-deploy-action@releases/v4
-        env:
-          BASE_BRANCH: main
-          BRANCH: docs
-          FOLDER: docs/dist
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: docs
+          folder: docs/dist
