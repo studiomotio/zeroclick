@@ -67,7 +67,7 @@
     "gsap": "^3.11.3",
     "husky": "^8.0.2",
     "jest": "^29.3.1",
-    "jest-environment-jsdom": "^29.2.2",
+    "jest-environment-jsdom": "^29.3.1",
     "microbundle": "^0.15.1",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.4.18",
