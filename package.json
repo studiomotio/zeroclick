@@ -50,7 +50,7 @@
   "homepage": "https://zeroclick.js.org",
   "engines": {
     "node": "^18",
-    "npm": "^8"
+    "npm": "^9"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
