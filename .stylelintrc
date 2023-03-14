@@ -51,7 +51,6 @@
         ]
       }
     ],
-    "string-quotes": "single",
     "scss/at-extend-no-missing-placeholder": null,
     "order/properties-order": [
       {
