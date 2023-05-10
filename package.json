@@ -75,7 +75,7 @@
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
     "stylelint": "^15.6.1",
-    "stylelint-config-standard-scss": "^7.0.1",
+    "stylelint-config-standard-scss": "^9.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-webpack-plugin": "^4.1.1",
     "webpack": "^5.82.0",
