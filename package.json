@@ -62,7 +62,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^5.0.0",
-    "eslint": "^8.40.0",
+    "eslint": "^8.41.0",
     "eslint-webpack-plugin": "^4.0.1",
     "gsap": "^3.11.5",
     "husky": "^8.0.3",
