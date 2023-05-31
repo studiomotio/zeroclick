@@ -70,7 +70,7 @@
     "jest-environment-jsdom": "^29.5.0",
     "microbundle": "^0.15.1",
     "mini-css-extract-plugin": "^2.7.6",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.24",
     "postcss-loader": "^7.3.0",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
