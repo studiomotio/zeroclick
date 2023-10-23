@@ -49,8 +49,8 @@
   },
   "homepage": "https://zeroclick.js.org",
   "engines": {
-    "node": "^18",
     "npm": "^9"
+    "node": "^20",
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
