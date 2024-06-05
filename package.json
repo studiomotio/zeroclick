@@ -58,6 +58,7 @@
     "@babel/core": "^7.24.6",
     "@babel/preset-env": "^7.24.6",
     "@barba/core": "^2.9.7",
+    "@stylistic/eslint-plugin": "^1.8.1",
     "@stylistic/stylelint-plugin": "^2.1.2",
     "autoprefixer": "^10.4.19",
     "babel-jest": "^29.7.0",
