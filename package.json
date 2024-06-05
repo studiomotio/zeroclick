@@ -14,13 +14,15 @@
     "build": "microbundle --no-sourcemap",
     "test": "jest",
     "coverage": "jest --coverage",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "node .node/funding.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/studiomotio/zeroclick.git"
   },
   "files": [
+    ".node/funding.js",
     "dist"
   ],
   "keywords": [
