@@ -77,7 +77,7 @@
     "stylelint": "^15.11.0",
     "stylelint-config-standard-scss": "^10.0.0",
     "stylelint-order": "^6.0.4",
-    "stylelint-webpack-plugin": "^4.1.1",
+    "stylelint-webpack-plugin": "^5.0.1",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
