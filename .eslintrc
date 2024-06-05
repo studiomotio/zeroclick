@@ -5,60 +5,17 @@
     "es2022": true,
     "jest": true
   },
+  "plugins": [
+    "@stylistic"
+  ],
   "extends": "eslint:recommended",
   "parserOptions": {
     "sourceType": "module"
   },
   "rules": {
-    "array-bracket-spacing": [
-      "error"
-    ],
-    "arrow-spacing": [
-      "error"
-    ],
-    "brace-style": [
-      "error"
-    ],
-    "comma-dangle": [
-      "error",
-      "always-multiline"
-    ],
-    "comma-spacing": [
-      "error", {
-        "before": false,
-        "after": true
-      }
-    ],
-    "computed-property-spacing": [
-      "error"
-    ],
     "eqeqeq": [
       "error",
       "always"
-    ],
-    "func-call-spacing": [
-      "error"
-    ],
-    "indent": [
-      "error",
-      2, {
-        "SwitchCase": 1
-      }
-    ],
-    "key-spacing": [
-      "error"
-    ],
-    "keyword-spacing": [
-      "error"
-    ],
-    "lines-around-comment": [
-      "error", {
-        "beforeBlockComment": true
-      }
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
     ],
     "no-console": [
       "off"
@@ -66,61 +23,140 @@
     "no-invalid-this": [
       "error"
     ],
-    "no-multi-spaces": [
+    "strict": [
       "error"
     ],
-    "no-multiple-empty-lines": [
+    "@stylistic/array-bracket-spacing": [
+      "error"
+    ],
+    "@stylistic/arrow-spacing": [
+      "error"
+    ],
+    "@stylistic/brace-style": [
+      "error"
+    ],
+    "@stylistic/comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "@stylistic/comma-spacing": [
+      "error", {
+        "before": false,
+        "after": true
+      }
+    ],
+    "@stylistic/computed-property-spacing": [
+      "error"
+    ],
+    "@stylistic/dot-location": [
+      "error",
+      "property"
+    ],
+    "@stylistic/function-call-argument-newline": [
+      "error",
+      "never"
+    ],
+    "@stylistic/function-call-spacing": [
+      "error",
+      "never"
+    ],
+    "@stylistic/function-paren-newline": [
+      "error"
+    ],
+    "@stylistic/indent": [
+      "error",
+      2, {
+        "SwitchCase": 1
+      }
+    ],
+    "@stylistic/key-spacing": [
+      "error"
+    ],
+    "@stylistic/keyword-spacing": [
+      "error"
+    ],
+    "@stylistic/lines-around-comment": [
+      "error", {
+        "beforeBlockComment": true
+      }
+    ],
+    "@stylistic/linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "@stylistic/no-extra-parens": [
+      "error"
+    ],
+    "@stylistic/no-floating-decimal": [
+      "error"
+    ],
+    "@stylistic/no-mixed-operators": [
+      "error"
+    ],
+    "@stylistic/no-multi-spaces": [
+      "error"
+    ],
+    "@stylistic/no-multiple-empty-lines": [
       "error", {
         "max": 1
       }
     ],
-    "no-trailing-spaces": [
+    "@stylistic/no-trailing-spaces": [
       "error"
     ],
-    "no-whitespace-before-property": [
+    "@stylistic/no-whitespace-before-property": [
       "error"
     ],
-    "object-curly-spacing": [
+    "@stylistic/object-curly-newline": [
+      "error", {
+        "ObjectExpression": "always"
+      }
+    ],
+    "@stylistic/object-curly-spacing": [
       "error",
       "always"
     ],
-    "object-property-newline": [
+    "@stylistic/object-property-newline": [
       "error"
     ],
-    "quotes": [
+    "@stylistic/operator-linebreak": [
+      "error",
+      "none"
+    ],
+    "@stylistic/quotes": [
       "error",
       "single"
     ],
-    "rest-spread-spacing": [
+    "@stylistic/rest-spread-spacing": [
       "error"
     ],
-    "semi": [
+    "@stylistic/semi": [
       "error",
       "always"
     ],
-    "semi-spacing": [
+    "@stylistic/semi-spacing": [
       "error"
     ],
-    "space-before-blocks": [
+    "@stylistic/space-before-blocks": [
       "error"
     ],
-    "space-before-function-paren": [
+    "@stylistic/space-before-function-paren": [
       "error", {
         "anonymous": "always",
         "asyncArrow": "always",
         "named": "never"
       }
     ],
-    "space-in-parens": [
+    "@stylistic/space-in-parens": [
       "error"
     ],
-    "space-infix-ops": [
+    "@stylistic/space-infix-ops": [
       "error"
     ],
-    "space-unary-ops": [
+    "@stylistic/space-unary-ops": [
       "error"
     ],
-    "spaced-comment": [
+    "@stylistic/spaced-comment": [
       "error",
       "always", {
         "block": {
@@ -128,10 +164,10 @@
         }
       }
     ],
-    "strict": [
+    "@stylistic/switch-colon-spacing": [
       "error"
     ],
-    "template-curly-spacing": [
+    "@stylistic/template-curly-spacing": [
       "error"
     ]
   }
