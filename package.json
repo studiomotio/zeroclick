@@ -21,7 +21,6 @@
     "url": "git+https://github.com/studiomotio/zeroclick.git"
   },
   "files": [
-    ".node/funding.js",
     "dist"
   ],
   "keywords": [
