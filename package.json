@@ -14,8 +14,7 @@
     "build": "microbundle --no-sourcemap",
     "test": "jest",
     "coverage": "jest --coverage",
-    "prepare": "husky",
-    "postinstall": "node .node/funding.js"
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
