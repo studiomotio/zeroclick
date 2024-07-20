@@ -53,7 +53,7 @@
     "npm": "^10"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
+    "@babel/core": "^7.24.9",
     "@babel/preset-env": "^7.24.7",
     "@barba/core": "^2.9.7",
     "@stylistic/eslint-plugin": "^1.8.1",
