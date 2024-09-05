@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-env": "^7.25.4",
     "@barba/core": "^2.9.7",
     "@stylistic/eslint-plugin": "^1.8.1",
     "@stylistic/stylelint-plugin": "^2.1.2",
